@@ -4,7 +4,8 @@ metadata:
   name: mfe-sub-application-template
   annotations:
     github.com/project-slug: emapta-dio-danganan/mfe-sub-application-template
+  description: Scaffolding for Microfrontend subapplication
 spec:
-  type: other
-  lifecycle: unknown
+  type: service
+  lifecycle: experimental
   owner: guests
