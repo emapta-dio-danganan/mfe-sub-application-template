@@ -1,0 +1,34 @@
+.v2{
+    .e-toggle{
+        display: inline-flex;
+        border-radius: $border-radius-md;
+        box-shadow: 0 0 0 1px $blue-light2;
+
+        > div{
+            label{
+                padding: 15px 30px;
+                box-shadow: none;
+                color: $gray-dark;
+                font-size: $text-sm;
+                font-weight: $font-bold;
+                margin-bottom: 0;
+                border-radius: $border-radius-md;
+                transition: $transition;
+
+                &:hover{
+                    background-color: $blue-light;
+                }
+            }
+            input:checked + label{
+                background-color: $blue-light4;
+                color: $white;
+            }
+        }
+    }
+
+    .is-invalid {
+      .e-toggle {
+        box-shadow: 0 0 0 1px $red;
+      }
+    }
+}

@@ -1,0 +1,302 @@
+// Breakpoint: Smaller devices
+@mixin xs {
+  @media (min-width: #{$screen-xs-min}) {
+      @content;
+  }
+}
+
+// Breakpoint: Small devices
+@mixin sm {
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Medium devices
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Large devices
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Extra large devices
+@mixin xl {
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Extra large devices
+@mixin xxl {
+   @media (min-width: #{$screen-xxl-min}) {
+       @content;
+   }
+}
+
+// Gradients
+@mixin gradient($direction, $gradient-color1, $gradient-color2) {
+  background: -webkit-linear-gradient($direction, $gradient-color1, $gradient-color2);
+  background: -moz-linear-gradient($direction, $gradient-color1, $gradient-color2);
+  background: -o-linear-gradient($direction, $gradient-color1, $gradient-color2);
+  background: linear-gradient($direction, $gradient-color1, $gradient-color2);
+}
+
+// Express Items
+@mixin express($express-item){
+  .item-#{$express-item}{
+    .express-icon{
+      background: url('/images/icons/express/icon-#{$express-item}-gray.svg');
+    }
+    &:hover{
+      .express-icon{
+        background: url('/images/icons/express/icon-#{$express-item}.svg');
+      }
+    }
+  }
+}
+
+// Nav Link
+@mixin nav-link($link){
+  .link-#{$link}{
+    .side-nav-icon{
+      background: url('/assets/images-v2/icons/gray-light/icon-#{$link}-graylight.svg') center center no-repeat;
+    }
+    &:hover, &.is-active{
+      .side-nav-icon{
+        background: url('/assets/images-v2/icons/gray-dark/icon-#{$link}-graydark.svg') center center no-repeat;
+      }
+    }
+  }
+}
+
+@mixin nav-link-dark($link){
+  .link-#{$link}{
+    &:hover, &.is-active{
+      .side-nav-icon{
+        background: url('/assets/images-v2/icons/white/icon-#{$link}-white.svg') center center no-repeat;
+      }
+    }
+  }
+}
+
+@mixin nav-link2($link){
+  .item-#{$link}{
+    .side-nav-icon{
+      background: url('/assets/images-v2/icons/gray-light/icon-#{$link}-graylight.svg') center center no-repeat;
+    }
+    &:hover, &.is-active{
+      .side-nav-icon{
+        background: url('/assets/images-v2/icons/gray-dark/icon-#{$link}-graydark.svg') center center no-repeat;
+      }
+    }
+  }
+}
+
+// Belt Actions
+@mixin belt-action($action){
+  .belt-#{$action}{
+    .belt-icon{
+      background: center center no-repeat;
+      background-image: url('/images/icons/icon-#{$action}-graydark.svg');
+    }
+    &:hover .belt-icon{
+      background-image: url('/images/icons/icon-#{$action}.svg');
+    }
+  }
+}
+
+// Link Icons
+@mixin link-icon($icon){
+  .icon-#{$icon}{
+    background: center center no-repeat;
+    background-image: url('/images/icons/icon-#{$icon}-tealdark.svg');
+    transition: $transition;
+  }
+  &:hover .icon-#{$icon}{
+    background-image: url('/images/icons/icon-#{$icon}-teal.svg');
+  }
+}
+
+// SSO Icons
+@mixin sso-link($icon){
+  .link-#{$icon}{
+    div{
+      background: center center no-repeat;
+      background-image: url('/images/icons/icon-#{$icon}-gray.svg');
+      transition: $transition;
+    }
+    &:hover{
+      div{
+        background-image: url('/images/icons/icon-#{$icon}-white.svg');
+      }
+    }
+  }
+}
+
+// App Icons
+@mixin app-icon($icon){
+  .item-#{$icon}{
+    .app-icon{
+      height: 40px;
+      width: 40px;
+      background: center center no-repeat;
+      background-image: url('/images/icons/apps/icon-#{$icon}-gray.svg');
+      transition: $transition;
+    }
+    &:hover{
+      .app-icon{
+        background-image: url('/images/icons/apps/icon-#{$icon}.svg');
+      }
+    }
+  }
+}
+
+// Express Services
+@mixin express-service($icon){
+  .express-services-item{
+    &.express-#{$icon}{
+      .express-services-icon{
+        background: url('/assets/images-v2/icons/gray-light/icon-#{$icon}-graylight.svg') center center no-repeat;
+      }
+    }
+    &:hover{
+      &.express-#{$icon}{
+        .express-services-icon{
+          background: url('/assets/images-v2/icons/gray-dark/icon-#{$icon}-graydark.svg') center center no-repeat;
+        }
+      }
+    }
+  }
+}
+
+// Tab Resize
+@keyframes tabResize{
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+// Progress Bar
+@keyframes progressMove {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 20px;
+  }
+}
+
+// Critical Animation
+@keyframes critical{
+  0%{
+    box-shadow: 0 0 0 0 $gray;
+  }
+  100%{
+    box-shadow: 0 0 30px 5px $gray;
+  }
+}
+
+.critical-glow{
+  animation: critical 1s alternate infinite;
+}
+
+@keyframes chat-loading {
+	0% {
+		transform: translateY(0px);
+	}
+	10% {
+		transform: translateY(-4px);
+	}
+	20% {
+		transform: translateY(0px);
+	}
+}
+
+// Appllications Services
+@mixin card-application($icon){
+  .card-applications a{
+    .icon-link-#{$icon}{
+      background-image: url('/assets/images-v2/applications/#{$icon}-blue.svg');
+    }
+    &:hover{
+      .icon-link-#{$icon}{
+        background-image: url('/assets/images-v2/applications/#{$icon}.svg');
+      }
+    }
+  }
+}
+
+@mixin card-application2($icon){
+  .card-applications a{
+    .icon-item-#{$icon}{
+      background-image: url('/assets/images-v2/applications/#{$icon}-blue.svg');
+    }
+    &:hover{
+      .icon-item-#{$icon}{
+        background-image: url('/assets/images-v2/applications/#{$icon}.svg');
+      }
+    }
+  }
+}
+
+@mixin card-application3($icon){
+  .card-applications a{
+    .icon-#{$icon}{
+      background-image: url('/assets/images-v2/applications/#{$icon}-blue.svg');
+    }
+    &:hover{
+      .icon-#{$icon}{
+        background-image: url('/assets/images-v2/applications/#{$icon}.svg');
+      }
+    }
+  }
+}
+
+// Quick Link Icons
+@mixin quick-links($icon){
+  .side-quicklinks > div{
+    .icon-#{$icon}{
+      background-image: url('/assets/images-v2/icons/gray-light/icon-#{$icon}-graylight.svg');
+    }
+    &:hover{
+      .icon-#{$icon}{
+        background-image: url('/assets/images-v2/icons/blue/icon-#{$icon}-blue.svg');
+      }
+    }
+  }
+}
+
+// Profile Modal Icons
+@mixin profile-modal($icon){
+  .icon-#{$icon}{
+    background-image: url('/assets/images-v2/icons/gray-light/icon-#{$icon}-graylight.svg');
+  }
+}
+
+// Card Filter List
+@mixin card-filter-list($icon){
+  .card-filter-list > div{
+    .icon-#{$icon}{
+      background-image: url('/assets/images-v2/icons/gray-light/icon-#{$icon}-graylight.svg');
+    }
+    &:hover, &.is-active{
+      .icon-#{$icon}{
+        background-image: url('/assets/images-v2/icons/blue/icon-#{$icon}-blue.svg');
+      }
+    }
+  }
+}

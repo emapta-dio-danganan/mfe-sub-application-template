@@ -1,0 +1,126 @@
+{
+  "name": "sub-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack serve --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.prod.js",
+    "node-dev": "cd node && nodemon Server",
+    "build-prod": "react-scripts build",
+    "lint": "eslint src/pages/client-management/*.js",
+    "test": "jest --env=jsdom",
+    "test-watch": "npm run test -- --watch --notify  --detectOpenHandles"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "axios": "^0.23.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "date-fns": "^2.28.0",
+    "dotenv": "^10.0.0",
+    "dotenv-webpack": "^7.0.3",
+    "empower-affiliate-search": "^0.1.22",
+    "empower-calendar": "^0.0.8",
+    "empower-category-menu": "^0.1.4",
+    "empower-container": "^0.1.26",
+    "empower-display": "^0.1.55",
+    "empower-drag-and-drop-file": "^0.1.10",
+    "empower-drag-drop-container": "^0.1.0",
+    "empower-file-viewer": "^0.1.2",
+    "empower-inputs": "^0.1.35",
+    "empower-profile-image": "^0.1.10",
+    "empower-sidebar-filter": "^0.1.7",
+    "empower-wysiwyg": "^0.0.6",
+    "express": "^4.17.1",
+    "form-data": "^4.0.0",
+    "fs": "0.0.1-security",
+    "helmet": "^6.0.0",
+    "html-react-parser": "^1.4.8",
+    "jwt-decode": "^3.1.2",
+    "jwt-encode": "^1.0.1",
+    "multer": "^1.4.3",
+    "node-fetch": "^2.6.5",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-date-range": "^1.3.0",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.2",
+    "redux": "^4.1.2",
+    "redux-persist": "^6.0.0",
+    "sass-loader": "^12.6.0",
+    "svg-url-loader": "^7.1.1",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.12.1",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "babel-jest": "^27.5.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.30.1",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.2.4",
+    "msw": "^0.30.1",
+    "nodemon": "^2.0.15",
+    "popper.js": "^1.16.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
+    "redux-mock-store": "^1.5.4",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.49.11",
+    "style-loader": "^2.0.0",
+    "svg-url-loader": "^7.1.1",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "tests/integration/",
+      "tests/unit/"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-react-jsx"
+      ]
+    ]
+  }
+}

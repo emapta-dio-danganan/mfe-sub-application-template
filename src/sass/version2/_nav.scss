@@ -1,0 +1,1146 @@
+.top-nav-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+}
+
+.top-nav{
+  background: $white;
+  border-bottom: 1px solid $gray-light;
+  box-shadow: $shadow-card;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 11;
+
+  @include sm{
+    height: 60px;
+    flex-direction: row;
+  }
+}
+
+.top-left, .top-right{
+  display: flex;
+  width: 100%;
+}
+
+.top-right{
+  justify-content: flex-end;
+  padding-right: 0!important;
+}
+
+.top-toggle{
+  height: 59px;
+  width: 60px;
+  position: relative;
+  cursor: pointer;
+  transition: $transition;
+
+  div{
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    background-color: $gray;
+    transition: $transition;
+
+    &:before, &:after{
+      content: "";
+      background-color: $gray;
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 20px;
+      transition: $transition;
+    }
+
+    &:before{
+      top: -6px;
+    }
+
+    &:after{
+      top: 6px;
+    }
+  }
+
+  &:hover{
+    background-color: $gray-lightest;
+    div{
+      background-color: $gray-dark;
+      &:before, &:after{
+        background-color: $gray-dark;
+      }
+      &:before{
+        top: -4px;
+      }
+      &:after{
+        top: 4px;
+      }
+    }
+  }
+
+  &.is-open, &.is-open:hover{
+    background-color: $secondary;
+
+    div{
+      transform: rotate(90deg);
+      background-color: transparent;
+
+      &:before, &:after{
+        top: 0;
+        background-color: $white;
+      }
+
+      &:before{
+        transform: rotate(45deg);
+      }
+      &:after{
+        transform: rotate(-45deg);
+      }
+    }
+
+    @include lg{
+      background-color: transparent;
+
+      div{
+        transform: rotate(0deg);
+        background-color: $gray;
+
+        &:before, &:after{
+          transform: rotate(0deg);
+          background-color: $gray;
+        }
+
+        &:before{
+          top: -6px;
+        }
+
+        &:after{
+          top: 6px;
+        }
+      }
+
+      &:hover{
+        background-color: $gray-lightest;
+        div{
+          background-color: $gray-dark;
+          &:before, &:after{
+            background-color: $gray-dark;
+          }
+          &:before{
+            top: -4px;
+          }
+          &:after{
+            top: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.top-logo{
+  padding: 0 5px;
+  a{
+    display: block;
+    height: 60px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg{
+      width: 100%;
+      height: 100%;
+    }
+
+    .fill{
+      fill: $gray;
+      transition: $transition;
+    }
+
+    &:hover{
+      .fill{
+        fill: $red;
+      }
+    }
+  }
+}
+
+.top-roles{
+  font-size: 0.875rem;
+  margin-left: 1rem;
+  align-items: center;
+  display: flex;
+  height: 60px;
+
+  > a{
+    min-width: 100px;
+    background-color: $gray-lightest;
+    border: none;
+    font-weight: 700;
+    padding: 5px 45px 5px 15px;
+    cursor: pointer;
+    height: 40px;
+    color: $gray-dark;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    transition: $transition;
+
+    &:after{
+      content: '';
+      height: 20px;
+      width: 20px;
+      background: url('/images/icons/icon-arrowdown-graydark.svg') 85% center no-repeat;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transition: $transition;
+    }
+
+    &:hover{
+      background-color: $gray-lighter;
+      color: $gray-darker;
+    }
+
+    &.is-active{
+      background-color: $secondary;
+      color: $white;
+
+      &:after{
+        transform: rotate(180deg);
+        background: url('/images/icons/icon-arrowdown-white.svg') 85% center no-repeat;
+      }
+    }
+  }
+}
+
+.top-actions{
+  width: 60%;
+  height: 59px;
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.1);
+  display: flex;
+  flex: auto;
+
+  > div{
+    width: 33.33%;
+    box-shadow: inset 1px 0 0 0 $gray-light;
+  }
+
+  @include sm{
+    position: relative;
+    width: auto;
+    top: 0;
+    flex: none;
+
+    > div{
+      width: 60px;
+    }
+  }
+}
+
+.top-action{
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: $transition;
+
+  .top-icon{
+    height: 60px;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    transition: $transition;
+
+    svg{
+      height: 20px;
+      width: 20px;
+      fill: $gray;
+      transition: $transition;
+      margin: auto;
+    }
+
+    span{
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background-color: #E74C3C;
+      border: 2px solid #fff;
+      display: block;
+      position: absolute;
+      top: 14px;
+      right: calc(50% - 17px);
+      z-index: 1;
+    }
+
+    &:hover{
+      background-color: $gray-lightest;
+      box-shadow: inset 1px 0 0 0 $gray-light, inset 0 1px 0 0 $gray-light;
+
+      svg{
+        fill: $gray-dark;
+      }
+    }
+
+    @include md{
+      padding: 20px;
+      .top-icon{
+        width: 60px;
+      }
+    }
+  }
+
+  &.is-active{
+    .top-icon{
+      background-color: $secondary;
+
+      svg{
+        fill: $white;
+
+        &:hover{
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  @include sm{
+    position: relative;
+  }
+}
+
+.top-account{
+  height: 60px;
+  width: 20%;
+  position: relative;
+  box-shadow: -1px 0 0 0 $gray-light;
+
+  @include sm{
+    width: 60px;
+  }
+}
+
+.top-profile{
+  height: 60px;
+  width: 100%;
+  box-shadow: -1px 0 0 0 rgba(0,0,0,0.1);
+  flex: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  .thumb{
+    width: 100%;
+    height: 100%;
+  }
+
+  .top-profile-img{
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    height: 62px;
+    width: 62px;
+    background: center;
+    background-size: cover;
+    transform: scale(1);
+    transition: $transition;
+    z-index: 0;
+  }
+
+  &:hover{
+    .top-profile-img{
+      transform: scale(1.1);
+    }
+  }
+}
+
+.top-clock{
+  height: 60px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  cursor: pointer;
+  transition: $transition;
+
+  &.clock-in{
+    background: url('/images/icon-clock.svg') center center no-repeat;
+    background-color: $green;
+
+    &:hover{
+      background-color: $green-dark;
+    }
+  }
+
+  &.clock-out{
+    background: url('/images/icon-clock.svg') center center no-repeat;
+    background-color: $red;
+
+    &:hover{
+      background-color: $red-dark;
+    }
+  }
+
+  &.shift-ended{
+    background: url('/images/icon-clock.svg') center center no-repeat;
+    background-color: $gray-dark;
+
+    &:hover{
+      background-color: $gray-darker;
+    }
+  }
+  &.error{
+    // background: url('/images/icon-problem-gray.svg') center center no-repeat;
+    background-color: $gray-lighter;
+
+    &:hover{
+      background-color: $gray-lighter;
+    }
+  }
+  &.loading{
+    // background: url('/images/icon-viewshift-gray.svg') center center no-repeat;
+    background-color: $gray-lighter;
+    color: $gray !important;
+
+    &:hover{
+      background-color: $gray-lighter;
+    }
+  }
+
+  div{
+    font-size: 0.875rem;
+    width: auto;
+    font-weight: 700;
+    color: $white;
+    margin-left: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    left: 10px;
+    transition: $transition;
+  }
+
+  @include sm{
+    width: 60px;
+  }
+
+  @include md{
+    width: auto;
+    padding: 1rem 1.5rem 1rem 3rem;
+
+    &.clock-in, &.clock-out, &.shift-ended{
+      background-position: 25px center;
+    }
+
+    div{
+      left: 0;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.side-nav{
+  position: fixed;
+  top: 120px;
+  left: 0;
+  height: calc(100% - 120px);
+  background-color: $gray-lightest;
+  width: 100%;
+  max-width: 280px;
+  z-index: 11;
+  border-right: 1px solid $gray-light;
+  transition: $transition;
+  transform: translateX(-100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.is-open{
+    transform: translateX(0);
+    .side-nav-support{
+      transform: translateX(-60px);
+      > div{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  @include sm{
+    top: 60px;
+    height: calc(100% - 60px);
+  }
+
+  @include lg{
+    max-width: 280px;
+    transform: translateX(0);
+
+    a{
+      span{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    &.is-open{
+      max-width: 60px;
+      transform: translateX(0);
+
+      a{
+        span{
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(60px);
+        }
+      }
+    }
+  }
+}
+
+.side-nav-links{
+  margin: 1rem 0 0;
+  padding: 0;
+
+  li{
+    margin-bottom: 0;
+    transition: $transition;
+
+    &.has-dropdown{
+      background-color: $gray-lighter;
+      position: relative;
+      margin: 0;
+
+      &:before{
+        width: 5px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $secondary;
+      }
+
+      ul{
+        display: block;
+      }
+
+      a{
+        > span{
+          color: $gray-dark;
+        }
+
+        &.is-active{
+          > span{
+            color: $gray-darker;
+          }
+        }
+
+        &:hover{
+          &:before{
+            background-color: $secondary-light;
+          }
+        }
+      }
+    }
+
+    .link-finalstaffingproposal {
+      .side-nav-icon {
+        // background: url('/images/icons/icon-fsp-gray.svg') center no-repeat;
+      }
+      &.is-active, &:hover {
+        .side-nav-icon {
+          // background: url('/images/icons/icon-fsp.svg') center no-repeat;
+        }
+      }
+    }
+
+    .link-nhaextractor {
+      .side-nav-icon {
+        // background: url('/images/icons/icon-nhaextractor-gray.svg') center no-repeat;
+      }
+      &.is-active, &:hover {
+        .side-nav-icon {
+          // background: url('/images/icons/icon-nhaextractor.svg') center no-repeat;
+        }
+      }
+    }
+  }
+
+  a{
+    display: flex;
+    padding: 15px 20px;
+    width: 100%;
+    align-items: center;
+    color: $gray-dark;
+    position: relative;
+    height: 50px;
+
+    span{
+      margin-left: 20px;
+      min-width: 200px;
+      transition: $transition;
+    }
+
+    .side-nav-icon{
+      height: 20px;
+      width: 20px;
+      flex: none;
+      transition: $transition;
+
+      svg{
+        height: 20px;
+        width: 20px;
+      }
+
+      .fill, .fill-color{
+        fill: $gray;
+        transition: $transition;
+      }
+    }
+
+    &:before{
+      content: '';
+      background-color: transparent;
+      height: 0;
+      width: 5px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      transition: $transition;
+    }
+
+    &:hover{
+      &:before{
+        height: 40px;
+        background-color: $gray-light;
+      }
+    }
+
+    &:hover, &.is-active{
+      color: $gray-darkest;
+
+      .fill{
+        fill: $gray-darker;
+      }
+
+      .fill-color{
+        fill: $secondary;
+      }
+
+      span{
+        color: $gray-darker;
+      }
+    }
+
+    &.is-active{
+      &:before{
+        height: 40px;
+        background-color: $secondary;
+      }
+    }
+  }
+
+  ul{
+    display: none;
+    padding-left: 0;
+    li{
+      padding-left: 0;
+      &:before{
+        display: none;
+      }
+
+      .item-payroll{
+        .side-nav-icon{
+          // background: url('/images/icons/icon-channelpayroll-gray.svg') center no-repeat;
+        }
+        &.is-active, &:hover{
+          .side-nav-icon{
+            // background: url('/images/icons/icon-channelpayroll.svg') center no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+.side-nav-support{
+  display: flex;
+  align-items: flex-end;
+  width: 340px;
+  transition: $transition;
+  transform: translateX(-60px);
+  min-height: 100px;
+
+  .link-support{
+    height: 60px;
+    width: 60px;
+    flex: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .link-icon{
+      height: 20px;
+      width: 20px;
+      background: center center no-repeat;
+      background-image: url('/images/icons/icon-support-gray.svg');
+      transition: $transition;
+    }
+
+    &:hover{
+      background-color: $gray-lighter;
+      .link-icon{
+        background-image: url('/images/icons/icon-support-graydark.svg');
+      }
+    }
+  }
+
+  > div{
+    opacity: 1;
+    visibility: visible;
+    width: 300px;
+    transition: $transition;
+    padding: 15px;
+
+    label{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 15px;
+
+      img{
+        margin-right: 15px;
+      }
+
+      svg{
+        display: none;
+      }
+    }
+    .support-list{
+      display: flex;
+
+      a{
+        margin-right: 15px;
+        margin-bottom: 0;
+        color: $white;
+
+        &.thumb-all{
+          box-shadow: inset 0 0 0 1px $gray-light;
+          background-color: transparent;
+          color: $gray-dark;
+
+          &:hover{
+            color: $white;
+            box-shadow: inset 0 0 0 4px $secondary;
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.side-overlay{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $secondary-darkest;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: $transition;
+
+  &.is-open{
+    opacity: 0.7;
+    visibility: visible;
+
+    &:hover{
+      opacity: 0.6;
+    }
+
+    @include lg{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+@include nav-link(dashboard);
+// @include nav-link(attendance);
+@include nav-link(requests);
+// @include nav-link(viewshift);
+// @include nav-link(newsfeed);
+// @include nav-link(knowledgecenter);
+// @include nav-link(talentdirectory);
+// @include nav-link(clientdirectory);
+// @include nav-link(teamleavebalance);
+// @include nav-link(planner);
+// @include nav-link(feedback);
+// @include nav-link(critical);
+// @include nav-link(workinstruction);
+// @include nav-link(payrollquery);
+// @include nav-link(reportsfeedback);
+// @include nav-link(clientextract);
+// @include nav-link(audittrails);
+// @include nav-link(leaveextraction);
+
+
+// @include nav-link(migrateedf);
+// @include nav-link(accountsettings);
+// @include nav-link(leavemanagement);
+// @include nav-link(managelogin);
+// @include nav-link(manageholidays);
+// @include nav-link(employeeconfig);
+// @include nav-link(payrollextract);
+// @include nav-link(dtrtemplate);
+// @include nav-link(employeeinforeport);
+// @include nav-link(dtrreportextraction);
+// @include nav-link(division);
+
+// @include nav-link(home);
+// @include nav-link(clientsconso);
+// @include nav-link(datamanagement);
+// @include nav-link(channels);
+// @include nav-link(shoprewards);
+
+.top-dropdown{
+  max-height: calc(100vh - 60px);
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-shadow: $shadow-popover;
+  display: none;
+
+  @include sm{
+    width: 350px;
+  }
+
+  @include md{
+    width: 450px;
+    left: auto;
+    right: 0;
+  }
+
+  &.dropdown-sm{
+    width: 300px;
+  }
+}
+
+.top-dropdown-content{
+  border-top: 5px solid $secondary;
+  background-color: $white;
+  width: 100%;
+  overflow: auto;
+}
+
+.dropdown-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  border-bottom: 1px solid $gray-light;
+  padding: 0 15px;
+  cursor: default;
+
+  > div{
+    display: flex;
+
+    a{
+      height: 50px;
+      width: 50px;
+      box-shadow: -1px 0 0 0 $gray-light;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover{
+        background-color: $gray-lightest;
+      }
+
+      .title-icon{
+        transition: $transition;
+        transform: translateX(0);
+      }
+
+      &.title-prev{
+        .title-icon{
+          background: url('/images/icons/icon-arrowleft-gray.svg') center no-repeat;
+          height: 20px;
+          width: 20px;
+        }
+
+        &:hover{
+          .title-icon{
+            background: url('/images/icons/icon-arrowleft-graydark.svg') center no-repeat;
+            transform: translateX(-2px);
+          }
+        }
+      }
+
+      &.title-next{
+        .title-icon{
+          background: url('/images/icons/icon-arrowright-gray.svg') center no-repeat;
+          height: 20px;
+          width: 20px;
+        }
+
+        &:hover{
+          .title-icon{
+            background: url('/images/icons/icon-arrowright-graydark.svg') center no-repeat;
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-item{
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid $gray-light;
+  cursor: pointer;
+
+  &:last-of-type{
+    border-bottom: none;
+  }
+
+  > svg{
+    flex: none;
+    fill: $gray;
+  }
+
+  .dropdown-arrow{
+    fill: $gray-dark;
+    transition: $transition;
+  }
+
+  .dropdown-content{
+    width: 100%;
+    padding: 0 15px;
+    color: $gray-darker;
+
+    h5{
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 5px;
+      display: block;
+      transition: $transition;
+    }
+
+    div{
+      font-weight: $font-regular;
+      line-height: 1.5;
+    }
+
+    span{
+      display: block;
+      font-weight: $font-regular;
+      color: $gray-dark;
+      line-height: 1.5;
+    }
+  }
+
+  &:hover{
+    background-color: $gray-lightest;
+
+    .dropdown-content{
+      h5{
+        color: $primary-dark;
+      }
+    }
+
+    .dropdown-arrow{
+      transform: translateX(2px);
+    }
+
+    .dropdown-link{
+      color: $gray-darker;
+    }
+  }
+}
+
+.popover.popover-notification{
+  .dropdown-item{
+    .thumb{
+      height: 40px;
+      width: 40px;
+
+      &:hover{
+        background-color: $secondary;
+      }
+
+      img{
+        padding: 0;
+        max-width: 30px;
+      }
+    }
+  }
+}
+
+.dropdown-link{
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  color: $gray-dark;
+}
+
+//Announcement
+.announcement-title{
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  transition: $transition;
+  border-bottom: 1px solid $gray-light;
+
+  > div{
+    font-size: $text-sm;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    width: 100%;
+    color: $gray-dark;
+
+    span{
+      background-color: $gray-lightest;
+      font-weight: $font-bold;
+      display: inline-block;
+      padding: 5px 10px;
+      margin-left: 5px;
+      transition: $transition;
+    }
+
+    h6{
+      font-family: $font-body;
+      color: $gray-dark;
+      transition: $transition;
+    }
+  }
+
+  > svg{
+    height: 20px;
+    width: 20px;
+    flex: none;
+    fill: $gray-dark;
+  }
+
+  .announcement-arrow{
+    transition: $transition;
+  }
+
+  &:hover{
+    background-color: $gray-lightest;
+
+    span{
+      background-color: $gray-lighter;
+    }
+
+    h6{
+      color: $gray-darker;
+    }
+  }
+
+  &.is-active{
+    h6{
+      color: $gray-darker;
+    }
+
+    .fill{
+      fill: $gray-darker;
+    }
+
+    .fill-color{
+      fill: $secondary;
+    }
+
+    .announcement-arrow{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.announcement-content{
+  > a{
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid $gray-light;
+    cursor: pointer;
+
+    h5, h6{
+      font-family: $font-body;
+      margin-bottom: 5px;
+      transition: $transition;
+    }
+
+    p{
+      font-weight: $font-regular;
+      color: $gray-darker;
+      margin-bottom: 5px;
+    }
+
+    span{
+      display: block;
+      color: $gray-dark;
+      font-weight: $font-regular;
+      line-height: 1.5;
+    }
+
+    &:hover{
+      background-color: $gray-lightest;
+
+      h5, h6{
+        color: $primary-dark;
+      }
+    }
+
+    &.is-read{
+      background-color: $gray-lightest;
+      h6, p{
+        color: $gray-dark;
+      }
+      &:hover{
+        h6{
+          color: $gray-darker;
+        }
+      }
+    }
+  }
+}
+
+.timerecorder-button{
+  position: relative;
+  z-index: 1;
+}
+
+.item-shoprewards {
+  .side-nav-icon {
+    background: url('/images/icons/icon-shoprewards-gray.svg') center no-repeat;
+  }
+  &.is-active, &:hover {
+    .side-nav-icon{
+      background: url('/images/icons/icon-shoprewards.svg') center no-repeat;
+    }
+  }
+}

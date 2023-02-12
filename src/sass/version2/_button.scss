@@ -1,0 +1,285 @@
+.button, a.button, button.button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  background-color: $primary;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: $primary-darker;
+  border: 0;
+  padding: 15px 30px;
+  min-height: 50px;
+  cursor: pointer;
+  transition: $transition;
+  border-radius: 0;
+  text-transform: none;
+
+  > span{
+    color: $primary-darker;
+  }
+
+  svg{
+    transition: $transition;
+  }
+
+  &.outline{
+    background-color: transparent;
+    color: $primary-dark;
+    box-shadow: inset 0 0 0 1px $primary;
+
+    svg{
+      fill: $primary-dark;
+    }
+  }
+
+  &:hover{
+    background-color: $primary-light;
+    color: $primary-darker;
+    box-shadow: inset 0 0 0 5px $primary-light;
+
+    > span{
+      color: $primary-darker;
+    }
+  }
+
+  &:active{
+    transform: scale(0.95);
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &.disabled{
+    background-color: $gray-lightest;
+    color: $gray;
+    box-shadow: none;
+    cursor: default;
+
+    &:focus, &:active{
+      transform: scale(1);
+    }
+  }
+
+  &.button-icon{
+    display: inline-flex;
+    align-items: center;
+
+    .icon{
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .button-content{
+    display: flex;
+    align-items: center;
+
+    .icon{
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.button-group{
+  display: flex;
+
+  button{
+    flex: auto;
+    text-align: center;
+    margin-right: -1px;
+    flex-basis: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &.is-active{
+      background-color: $primary;
+      color: $primary-darker;
+
+      &:hover{
+        background-color: $primary-light;
+      }
+    }
+  }
+
+  &.button-group-leave{
+    button{
+      border-color: $primary;
+      border-radius: 0;
+      margin-left: 0;
+      padding: 0 15px;
+      transition: $transition;
+
+      span{
+        transition: $transition;
+      }
+
+      &:hover, &.Mui-selected{
+        background-color: $primary;
+        box-shadow: inset 0 0 0 5px $primary;
+        span{
+          color: $primary-darker;
+        }
+      }
+    }
+    span{
+      font-size: $text-sm;
+      font-weight: $font-bold;
+      color: $primary-dark;
+      text-transform: none;
+    }
+  }
+}
+
+// Button Variations
+.button-certify{
+  .icon{
+    margin-left: 15px;
+    background: url('/images/icons/icon-certify-tealdark.svg') center center no-repeat;
+    transition: $transition;
+  }
+  &:hover{
+    .icon{
+      background: url('/images/icons/icon-certify-tealdarker.svg') center center no-repeat;
+    }
+  }
+}
+
+.status-certified{
+  display: inline-flex;
+  align-items: center;
+
+  > span{
+    font-weight: $font-bold;
+    color: $gray-darker;
+    margin: 0;
+  }
+
+  .status-icon{
+    width: 20px;
+    height: 20px;
+    background: url('/images/icons/icon-certify.svg') center center no-repeat;
+  }
+}
+
+a.button-clockin, button.button-clockin{
+
+  span{
+    color: $white;
+  }
+
+  .icon{
+    margin-left: 15px;
+    background: url('/images/icons/icon-clockin-white.svg') center center no-repeat;
+  }
+
+  &:hover{
+    box-shadow: none;
+  }
+}
+
+a.button-clockout, button.button-clockout{
+
+  span{
+    color: $white;
+  }
+
+  .icon{
+    margin-left: 15px;
+    background: url('/images/icons/icon-clockout-white.svg') center center no-repeat;
+  }
+
+  &:hover{
+    box-shadow: none;
+  }
+}
+
+a.button-shiftended, button.button-shiftended{
+
+  span{
+    color: $gray;
+  }
+
+  .icon{
+    margin-left: 15px;
+    background: url('/images/icons/icon-shiftended-gray.svg') center center no-repeat;
+  }
+
+  &:hover{
+    box-shadow: none;
+  }
+}
+
+// Links
+.link-icon{
+  transition: $transition;
+  border: 0;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  color: $primary-dark;
+  font-weight: $font-bold;
+  font-size: $text-sm;
+  cursor: pointer;
+
+  > div{
+    height: 20px;
+    width: 20px;
+    transition: $transition;
+  }
+
+  &:hover{
+    color: $primary;
+
+    .icon-arrowright{
+      transform: translateX(2px);
+    }
+
+    .icon-arrowdown{
+      transform: translateY(2px);
+    }
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &.icon-left{
+    > div{
+      margin-right: 5px;
+    }
+  }
+
+  &.icon-right{
+    > div{
+      margin-left: 5px;
+    }
+  }
+
+  @include link-icon(attachment);
+  @include link-icon(arrowright);
+  @include link-icon(arrowdowwn);
+  @include link-icon(fileamend);
+  @include link-icon(fileleave);
+  @include link-icon(fileovertime);
+  @include link-icon(viewdetails);
+
+
+
+}
+
+.btnProgress{
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.button-default {
+  border-radius: 0px !important;
+  color: #fafafa;
+  padding: 0px 20px !important;
+  text-transform: none !important
+}

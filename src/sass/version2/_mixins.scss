@@ -1,0 +1,213 @@
+// Breakpoint: Small devices
+@mixin sm {
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Medium devices
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Large devices
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Extra large devices
+@mixin xl {
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+
+// Breakpoint: Extra large devices
+@mixin xxl {
+   @media (min-width: #{$screen-xxl-min}) {
+       @content;
+   }
+}
+
+// Gradients
+@mixin gradient($direction, $gradient-color1, $gradient-color2) {
+  background: -webkit-linear-gradient($direction, $gradient-color1, $gradient-color2);
+  background: -moz-linear-gradient($direction, $gradient-color1, $gradient-color2);
+  background: -o-linear-gradient($direction, $gradient-color1, $gradient-color2);
+  background: linear-gradient($direction, $gradient-color1, $gradient-color2);
+}
+
+// Express Items
+@mixin express($express-item){
+  .item-#{$express-item}{
+    .express-icon{
+      background: url('/images/icons/express/icon-#{$express-item}-gray.svg');
+    }
+    &:hover{
+      .express-icon{
+        background: url('/images/icons/express/icon-#{$express-item}.svg');
+      }
+    }
+  }
+}
+
+// Nav Link
+@mixin nav-link($link){
+  .link-#{$link}{
+    .side-nav-icon{
+      background: url('/images/icons/icon-#{$link}-gray.svg') center center no-repeat;
+    }
+    &:hover, &.is-active{
+      .side-nav-icon{
+        background: url('/images/icons/icon-#{$link}.svg') center center no-repeat;
+      }
+    }
+    .layout-dark .side-nav-links & {
+      color: $gray;
+      .side-nav-icon{
+        background: url('/images/icons/icon-#{$link}-graydark.svg') center center no-repeat;
+      }
+      &.is-active{
+        .side-nav-icon{
+          background: url('/images/icons/icon-#{$link}-white.svg') center center no-repeat;
+        }
+      }
+    }
+    .layout-dark .side-nav-links li.has-dropdown &{
+      .side-nav-icon{
+        background: url('/images/icons/icon-#{$link}-white.svg') center center no-repeat;
+      }
+    }
+  }
+}
+
+// Belt Actions
+@mixin belt-action($action){
+  .belt-#{$action}{
+    .belt-icon{
+      background: center center no-repeat;
+      background-image: url('/images/icons/icon-#{$action}-graydark.svg');
+    }
+    &:hover .belt-icon{
+      background-image: url('/images/icons/icon-#{$action}.svg');
+    }
+  }
+}
+
+// Link Icons
+@mixin link-icon($icon){
+  .icon-#{$icon}{
+    background: center center no-repeat;
+    background-image: url('/images/icons/icon-#{$icon}-tealdark.svg');
+    transition: $transition;
+  }
+  &:hover .icon-#{$icon}{
+    background-image: url('/images/icons/icon-#{$icon}-teal.svg');
+  }
+}
+
+// SSO Icons
+@mixin sso-link($icon){
+  .link-#{$icon}{
+    div{
+      background: center center no-repeat;
+      background-image: url('/images/icons/icon-#{$icon}-gray.svg');
+      transition: $transition;
+    }
+    &:hover{
+      div{
+        background-image: url('/images/icons/icon-#{$icon}-white.svg');
+      }
+    }
+  }
+}
+
+// App Icons
+@mixin app-icon($icon){
+  .item-#{$icon}{
+    .app-icon{
+      height: 40px;
+      width: 40px;
+      background: center center no-repeat;
+      background-image: url('/images/icons/apps/icon-#{$icon}-gray.svg');
+      transition: $transition;
+    }
+    &:hover{
+      .app-icon{
+        background-image: url('/images/icons/apps/icon-#{$icon}.svg');
+      }
+    }
+  }
+}
+
+// Express Services
+@mixin express-service($icon){
+  .express-services-item{
+    &.express-#{$icon}{
+      .express-services-icon{
+        background-image: url('/images/icons/icon-#{$icon}-gray.svg');
+      }
+    }
+    &:hover{
+      &.express-#{$icon}{
+        .express-services-icon{
+          background-image: url('/images/icons/icon-#{$icon}.svg');
+        }
+      }
+    }
+  }
+}
+
+// Tab Resize
+@keyframes tabResize{
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+// Progress Bar
+@keyframes progressMove {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 20px;
+  }
+}
+
+// Critical Animation
+@keyframes critical{
+  0%{
+    box-shadow: 0 0 0 0 $red;
+  }
+  100%{
+    box-shadow: 0 0 30px 5px $red;
+  }
+}
+
+.critical-glow{
+  animation: critical 1s alternate infinite;
+}
+
+@keyframes chat-loading {
+	0% {
+		transform: translateY(0px);
+	}
+	10% {
+		transform: translateY(-4px);
+	}
+	20% {
+		transform: translateY(0px);
+	}
+}

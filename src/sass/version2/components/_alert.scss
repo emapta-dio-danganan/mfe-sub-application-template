@@ -1,0 +1,131 @@
+.v2{
+.alert{
+    background-color: $white;
+    display: flex;
+    padding: 15px;
+    width: 100%;
+    transition: $transition;
+    margin: 20px 0 10px;
+    
+    h5{
+      font-size: $text-base;
+      font-family: $font-body;
+      margin-bottom: 5px;
+      color: $gray-dark;
+  
+      a{
+        font-size: inherit;
+      }
+    }
+  
+    p{
+      color: $gray-dark1;
+      margin-bottom: 5px;
+    }
+  
+    span{
+      font-size: $text-sm;
+      color: $gray-dark;
+      line-height: 1.5;
+    }
+  
+    > div{
+      font-size: $text-sm;
+      color: $gray-light4;
+  
+      span{
+        display: block;
+        line-height: 1.5;
+      }
+    }
+  
+    button.button{
+      margin-top: 15px;
+      margin-right: 15px;
+      border-radius: 10px;
+  
+      span{
+        color: $white;
+      }
+  
+      &.button-clockin, &.button-clockout{
+        span{
+          color: $white;
+        }
+      }
+    }
+  
+    .alert-icon{
+      width: 30px;
+      height: 30px;
+      flex: none;
+      margin-right: 15px;
+    }
+
+    @mixin alert-outline {
+        border-top: 1px solid $blue-light2; 
+        border-right: 1px solid $blue-light2; 
+        border-bottom: 1px solid $blue-light2; 
+        border-radius: 5px 10px 10px 5px;
+    }
+  
+    &.is-success{
+        @include alert-outline;
+        border-left: 5px solid $green;
+
+      .alert-icon{
+        background: url('/images/icons/status/icon-status-done.svg') no-repeat center center;
+      }
+    }
+  
+    &.is-critical{
+        @include alert-outline;
+        border-left: 5px solid $red;
+  
+      .alert-icon{
+        background: url('/images/icons/status/icon-status-critical.svg') no-repeat center center;
+      }
+    }
+  
+    &.is-info{
+        @include alert-outline;
+        border-left: 5px solid $blue;
+  
+      .alert-icon{
+        background: url('/images/icons/status/icon-status-info.svg') no-repeat center center;
+      }
+    }
+  
+    &.is-warning{
+        @include alert-outline;
+        border-left: 5px solid $yellow;
+  
+      .alert-icon{
+        background: url('/images/icons/status/icon-status-warning.svg') no-repeat center center;
+      }
+    }
+  }
+  
+  .card-alert{
+    padding: 15px 15px 0;
+  
+    > div {
+      margin-bottom: 15px;
+    }
+  
+    .category-content &{
+      .alert{
+        margin-bottom: 15px;
+  
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+      }
+      .row{
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  
+}

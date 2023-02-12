@@ -1,0 +1,2976 @@
+$bg-color: $blue-light1;
+$bg-color2: $blue-light2;
+$card-color: $blue-light;
+$card-color2: $blue-light1;
+$border-color: $blue-light2;
+
+$text-color: $gray-dark;
+$text-color2: $blue-light1;
+$text-active-color: $white;
+$subtext-color: $gray-light4;
+$text-invalid: $red-dark;
+
+$link-color: $green-dark;
+$form-color: $blue-light1;
+$form-active-color: $blue;
+$form-hover-color: $blue-light3;
+$form-disabled-color: $blue-light1;
+$form-disabled-color2: $gray-light2;
+$dropdown-bg: $blue-light;
+$dropdown-bg-hover: $blue-light1;
+
+$calendar-grid: $blue-light2;
+$calendar-grid-today: $blue;
+$calendar-modal-active: $blue;
+
+$express-heading: $blue-dark3;
+$datepicker-heading: $blue-dark1;
+
+$bg-modal: $blue;
+$bg2-modal: $blue-light4;
+
+$svg-title: $blue-light4;
+
+.v2.theme-lightblue{
+    background: $bg-color;
+    color: $text-color;
+
+    #root{
+        background: $card-color;
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        color: $text-color;
+    }
+
+    a{
+        color: $link-color;
+    }
+
+    p{
+        color: $subtext-color;
+    }
+
+    .sub-text{
+        color: $subtext-color;
+    }
+
+    ul{
+        > li{
+            &:before{
+                background-color: $border-color;
+            }
+        }
+    }
+
+    .field, .e-field{
+        .e-input{
+            input, &.input-affiliate, textarea{
+                background-color: $card-color2;
+                box-shadow: inset 0 -2px 0 0 $form-color;
+                color: $text-color;
+
+                &:hover{
+                    box-shadow: inset 0 -2px 0 0 $form-hover-color;
+                }
+            }
+
+            &.input-affiliate{
+                .value-container .chip{
+                    background-color: $card-color;
+                }
+            }
+
+            .select__control{
+                background-color: $card-color2;
+                box-shadow: inset 0 -2px 0 0 $form-color;
+
+                &:hover{
+                    box-shadow: inset 0 -2px 0 0 $form-hover-color;
+                }
+
+                .select__single-value{
+                    color: $text-color;
+                }
+            }
+
+            .select__menu{
+                div{
+                    background-color: $card-color2;
+                    color: $text-color;
+
+                    &:hover{
+                        background-color: $bg-color;
+                    }
+                }
+            }
+
+            .e-input-icon{
+                background-color: $card-color;
+            }
+        }
+        > .filter-sort{
+            > button[type="button"]{
+                background-color: transparent;
+                span{
+                    color: $text-color;
+                }
+            }
+        }
+
+        .e-popover{
+            background-color: $card-color2;
+            box-shadow: 0px 30px 60px 0px rgba(19, 37, 154, 0.3);
+
+            .e-select{
+                background-color: $card-color2;
+
+                .e-input{
+                    input{
+                        background-color: $card-color;
+                    }
+                }
+
+                .e-select-all, .e-select-checklist{
+                    >div{
+                        &:hover{
+                            background-color: $bg-color;
+                        }
+                    }
+                }
+            }
+
+            option{
+                color: $text-color;
+
+                &:hover{
+                    background-color: $bg-color;
+                }
+            }
+
+            .e-select{
+                .e-select-checklist, .e-select-all{
+                    div{
+                        > span{
+                            color: $text-color;
+                        }
+
+                        &:hover{
+                            background-color: $card-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .field{
+        .input-toggle{
+            box-shadow: inset 0 0 0 1px $border-color;
+
+            button:hover{
+                background-color: $card-color2;
+            }
+
+            button{
+                color: $text-color;
+            }
+        }
+    }
+
+    .e-field{
+        &.is-invalid{
+            .e-input-label{
+                color: $text-invalid;
+            }
+        }
+    }
+
+    .chip{
+        background-color: $border-color;
+
+        span{
+            color: $text-color;
+        }
+    }
+
+    .e-attach-chips{
+        .chip{
+            span{
+                color: $text-color;
+            }
+        }
+    }
+
+    .popover{
+        background-color: $dropdown-bg;
+
+        > a{
+            box-shadow: inset 0 -1px 0 0 $border-color;
+            color: $subtext-color;
+        }
+
+        &.popover-months{
+            .list-months{
+                > a{
+                    box-shadow: inset 1px 0 0 0 $border-color, inset 0 1px 0 0 $border-color;
+                }
+            }
+        }
+
+        &.popover-list{
+            > a{
+                box-shadow: none;
+            }
+        }
+
+        &.popover-announcement{
+            .announcement-content{
+                h6{
+                    color: $text-color;
+                }
+                span{
+                    color: $subtext-color;
+                }
+            }
+        }
+
+        &.popover-notification {
+            .blank {
+                color: $white;
+
+                .icon {
+                    background-color: $bg-color;
+                }
+            }
+        }
+
+        .dropdown-item{
+            .dropdown-content{
+                div{
+                    color: $text-color;
+                }
+                span{
+                    color: $subtext-color;
+                }
+            }
+            &:hover{
+                background-color: $dropdown-bg-hover;
+            }
+        }
+
+        .e-datepicker{
+            background-color: $card-color2;
+
+            .e-datepicker-header{
+                background-color: $datepicker-heading;
+            }
+
+            .e-datepicker-content{
+                .e-datepicker-week{
+                    .e-datepicker-day{
+                        color: $subtext-color;
+                    }
+                }
+                .e-datepicker-days{
+                    .e-datepicker-day{
+                        span{
+                            color: $text-color;
+                        }
+                        &.disabled{
+                            span{
+                                color: $form-disabled-color;
+                            }
+                        }
+                        &:hover{
+                            background-color: $card-color;
+                            span{
+                                &:hover{
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .MuiPopover-root{
+        .MuiPaper-root{
+            background-color: transparent;
+
+            .popover{
+                a{
+                    &:hover{
+                        background-color: $dropdown-bg-hover;
+                        box-shadow: 0 -1px 0 0 $bg-color;
+                        color: $text-color;
+                    }
+                }
+
+                &.popover-months{
+                    a{
+                        &:hover{
+                            box-shadow: inset 1px 0 0 0 $border-color, inset 0 1px 0 0 $border-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .e-modal{
+        &:before{
+            @include gradient(120deg, $bg-modal, $bg2-modal);
+        }
+
+        .e-modal-container {
+            .card{
+                background-color: $card-color;
+                border-radius: $border-radius-md;
+    
+                .card-belt{
+                    background-color: transparent;
+                    .belt-left{
+                        .belt-action{
+                            &.is-primary{
+                                &:hover{
+                                    background-color: $green-dark;
+    
+                                    span{
+                                        color: $text-active-color;
+                                    }
+                                }
+                            }
+    
+                            &:hover{
+                                background-color: $card-color2;
+                                span{
+                                    color: $text-color;
+                                }                            
+                            }
+                        }
+                    }
+                    .belt-right{
+                        > a{      
+                            &#pagination, &.belt-next, &.belt-prev, &.belt-dropdown{
+                                box-shadow: inset 0 0 0 1px $border-color;
+                                color: $subtext-color;
+        
+                                &:hover{
+                                    background-color: transparent;
+                                    box-shadow: inset 0 0 0 1px $border-color;
+                                    color: $text-color;
+                                }
+                            }   
+    
+                            &#pagination{
+                                color: $subtext-color;
+        
+                                span{
+                                    color: $subtext-color;
+                                }
+        
+                                &:hover{
+                                    color: $text-color;
+                                    span{
+                                        color: $text-color;
+                                    }
+                                }
+                            }
+    
+                            &.modal-close{    
+                                &:hover{
+                                    background-color: $card-color2;
+                                    box-shadow: inset 0 0 0 5px $card-color2;
+        
+                                    svg{
+                                        path, rect{
+                                            fill: $form-hover-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .e-check{
+                    .e-check-input{
+                        label{
+                            border: 2px solid $form-color;
+                        }
+                        input:disabled + label{
+                            box-shadow: inset 0 0 0 2px $card-color;
+                            background-color: $form-disabled-color;
+                            border-color: $form-disabled-color;
+                        }
+                        input:checked + label{
+                            background-color: $form-active-color;
+                            border-color: $form-active-color;
+                        }
+                    }
+                }
+    
+                .card-timerecorder{
+                    .card-timerecorder-expected{
+                        box-shadow: 0 0 0 1px $border-color;
+                        p{
+                            color: $text-color;
+                        }
+    
+                        > div{
+                            border-color: $border-color;
+    
+                            .card-timerecorder-timestatus{
+                                > div{
+                                    color: $subtext-color;
+                                }
+                                span{
+                                    color: $text-color;
+                                }
+                            }
+                        }
+    
+                        .card-timerecorder-alert{
+                            border-color: $border-color;
+                        }
+                    }
+                    .card-timerecorder-timesheet{
+                        &:before{
+                            background-color: $border-color;
+                        }
+                        .card-timerecorder-dtr{
+                            > div{
+                                color: $text-color;
+                            }
+                        }
+                        .card-timerecorder-stat{
+                            p{
+                                color: $text-color;
+                            }
+                        }
+                    }
+                }
+    
+                .modal-divider{
+                    border-color: $border-color;
+                }
+    
+                .card-announcement-content {
+                    .announcement-check {
+                        p {
+                            color: $text-color;
+                        }
+                    }
+        
+                    .card-announcement-texts {
+                        p {
+                            color: $subtext-color;
+                        }
+                    }
+                } 
+        
+                .recipient-modal-content .card-grid-item{
+                    box-shadow: 0 0 0 1px $border-color;
+                }
+
+                .calculation-modal {
+                    .calculation-modal-content {
+                        .calculation-waiver .sigCanvas {
+                            background-color: $card-color2;
+                            box-shadow: inset 0 -2px 0 0 $form-color;
+                            color: $text-color;
+        
+                            &:hover{
+                                box-shadow: inset 0 -2px 0 0 $form-hover-color;
+                            }
+                        }
+
+                        .calculation-table {
+                            background-color: $card-color2;
+
+                            >div {
+                                background-color: $card-color;
+
+                                >div {
+                                    &:nth-of-type(1) {
+                                        border-bottom: 1px solid $border-color;
+                                    }
+
+                                    table tr {
+                                        box-shadow: 0 1px 0 0 $border-color;
+
+                                        &:last-of-type {
+                                            box-shadow: none;
+                                        }
+
+                                        &.with-bullets {
+                                            td:nth-of-type(1):before {
+                                                background-color: $border-color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .modal-content{
+            .modal-news-title{
+                p{
+                    color: $subtext-color;
+                }
+            }
+
+            .modal-news-author{
+                border-color: $border-color;
+
+                p{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    .modal-profile{
+        .modal-profile-content{
+            background-color: transparent;
+
+            .calendar{
+                .calendar-accordion{
+                    background-color: $bg-color2;
+                    border-color: $calendar-modal-active;
+
+                    p{
+                        color: $text-color;
+                    }
+
+                    span{
+                        color: $subtext-color;
+                    }
+                }
+                .calendar-item{
+                    &.is-active{
+                        background-color: $calendar-modal-active;
+                        border-color: $calendar-modal-active;
+                    }
+                }
+            }
+
+            .modal-profile-month{
+                button{
+                    box-shadow: inset 0 0 0 1px $form-color;
+                    svg{
+                        path, rect, circle{
+                            fill: $form-color;
+                        }
+                    }
+
+                    &:hover{
+                        box-shadow: inset 0 0 0 0 $bg-color2;
+                        background-color: $bg-color2;
+                    }
+                }
+            }
+
+            .modal-profile-reportsto{
+                > div{
+                    > div{
+                        span{
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+
+            .modal-profile-title{
+                svg{
+                    path, rect, circle{
+                        fill: $svg-title;
+                    }
+                }
+            }
+
+            .modal-profile-info{
+                svg{
+                    path, rect, circle{
+                        fill: $form-color;
+                    }
+                }
+                span{
+                    color: $text-color;
+                }
+            }
+
+            .modal-profile-request{
+                span{
+                    color: $subtext-color;
+                }
+            }
+
+            .dtr-holidays{
+                li{
+                    p{
+                        color: $text-color;
+                    }
+                    span{
+                        color: $subtext-color;
+                    }
+                }
+            }
+        }
+        .e-modal-container{
+            .belt-tabs{
+                &:after{
+                    background-color: $border-color;
+                }
+            }
+        }
+    }
+
+    .card.card-modal{
+        background-color: $card-color;
+
+        .card-belt{
+            background-color: transparent;
+
+            .belt-left{
+
+                .belt-info{
+                    &:hover{
+                        background-color: $card-color2;
+                    }
+                }
+            }
+        }
+
+        .card-content{
+            .request-details-section, .content-contact-details > .profile-info{
+                border-bottom: 1px solid $border-color;
+            }
+            .request-details-section{
+                li{
+                    p b{
+                        color: $text-color;
+                    }
+                }
+
+                &:last-of-type{
+                    border-bottom: 0;
+                }
+            }
+            .show-contributors{
+                border-top: 1px solid $border-color;
+            }
+        }
+
+        .card-grid.card-grid-individual, .card-grid.card-grid-multiple{
+            .card-grid-col{
+                .card-grid-item{
+                    .card-grid-name{
+                        div{
+                            p{
+                                color: $text-color;
+                            }
+                        }
+                    }
+
+                    .card-grid-info{
+                        span {
+                            color: $subtext-color;
+                        }
+                    }
+
+                    .card-grid-info span {
+                        color: $subtext-color;
+                    }
+                }
+            }
+        }
+
+        .card-grid.card-grid-multiple{
+            .card-grid-col{
+                .card-grid-item{
+                    box-shadow: inset 0 0 0 1px $border-color;
+                }
+            }
+        }
+
+        .card-grid .card-grid-item .card-grid-info {
+            border-top: 1px solid $border-color;
+        }
+    }
+
+    .alert{
+        background-color: transparent;
+        border-top: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .v2-main{
+        .v2-content{
+            background: $bg-color;
+
+            .main-dashboard{
+                .card-nobg{
+                    .card-belt{
+                        background-color: transparent;
+                    }
+                }
+            }
+
+        }
+        .card{
+            background-color: $card-color;
+
+            .card-page{
+                background-color: $card-color;
+            }
+
+            &.card-nobg{
+                background-color: transparent;
+            }
+
+            .card-belt{
+                background-color: transparent;
+                
+                .belt-left{
+                    .belt-icon-check{
+                        svg{
+                            .check-box-inactive{
+                                fill: $form-color;
+                            }
+                            .check{
+                                fill: $text-color;
+                            }
+                            .check-box{
+                                fill: $form-active-color;
+                            }
+                        }
+                    }
+                    .icon-back{
+                        &:hover{
+                            background-color: $card-color2;
+                        }
+                    }
+                    .belt-info{
+                        &:hover{
+                            background-color: $card-color2;
+                        }
+                    }
+                    .belt-info + .belt-action, .belt-title + .belt-action{
+                        &:hover{
+                            background-color: $green-dark;
+
+                            span{
+                                color: $text-active-color;
+                            }
+                        }
+                    }
+                    .belt-action{
+                        span{
+                            color: $text-color;
+                        }                    
+                        
+                        &.is-primary{
+                            span{
+                                color: $text-active-color;
+                            }
+                            
+                            &:hover{
+                                background-color: $green-dark;
+                            }
+                        }
+
+                        &:hover{
+                            background-color: $card-color2;                            
+                        }
+                    }
+
+                    .belt-action-main{
+                        &:hover{
+                            background-color: $green-dark;
+
+                            span{
+                                color: $text-active-color;
+                            }
+                        }
+                    }
+                }
+                .belt-right{
+                    > a, > a#pagination{
+                        box-shadow: inset 0 0 0 1px $border-color;
+                        color: $subtext-color;
+
+                        span{
+                            color: $subtext-color;
+                        }
+
+                        &:hover{
+                            box-shadow: inset 0 0 0 1px $form-color;
+                            color: $text-color;
+                            span{
+                                color: $text-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .banner{
+            background-color: $bg-color2;
+        }
+
+        .page-title{
+            .card{
+                background-color: transparent;
+
+                .card-belt{
+                    background-color: transparent;
+                    .belt-right{
+                        > a{
+                            box-shadow: inset 0 0 0 1px $border-color;
+
+                            &:hover{
+                                box-shadow: inset 0 0 0 1px $form-color;
+                            }
+                        }
+                        .belt-toggle{
+                            box-shadow: inset 0 0 0 1px $border-color;
+
+                            &:hover{
+                                background-color: $bg-color2;
+                                box-shadow: inset 0 0 0 1px $form-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-grid{
+            .card-grid-item{
+                box-shadow: 0 0 0 1px $border-color;
+
+                .card-grid-name{
+                    p{
+                        color: $text-color;
+                    }
+                }
+
+                .card-grid-info{
+                    border-color: $border-color;
+                }
+            }
+        }
+
+        .v2-side{
+            background-color: $card-color;
+        }
+    }
+
+    .card-news .card-news-name{
+        > div{
+            div{
+                color: $text-color;
+            }
+        }
+    }
+
+    .top-nav-wrap{
+        .top-nav{
+            background: $card-color;
+
+            .top-roles{
+                > a{
+                    box-shadow: inset 0 0 0 1px $form-color;
+                    color: $subtext-color;
+
+                    &:hover{
+                        box-shadow: inset 0 0 0 1px $form-hover-color;
+                        color: $text-color;
+                    }
+                }
+            }
+
+            .top-notifications, .top-announcement{
+                &:hover{
+                    background-color: transparent;
+                    .top-icon{
+                        background-color: $bg-color2;
+                    }
+                }
+            }
+
+            .top-right{
+                .top-actions{
+                    .top-action{
+                        .top-icon{
+                            span{
+                                border-color: $card-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .v2-side{
+        > .card{
+            border-color: $border-color;
+        }
+
+        .side-title{
+            a{
+                &:hover{
+                    background-color: $bg-color2;
+                }
+            }
+        }
+
+        .side-quicklinks{
+            > div{
+                a{
+                    color: $subtext-color;
+                }
+
+                &:hover{
+                    a{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        .side-certify{
+            > div{
+                span{
+                    color: $subtext-color;
+                }
+                &.is-active{
+                    span{
+                        color: $text-color;
+                    }
+                }
+                &:hover{
+                    span{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        .side-events{
+            .side-events-item{
+                > span{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    .side-nav{
+        background-color: $card-color;
+
+        .side-nav-links{
+            a{
+                span{
+                    color: $subtext-color;
+                }
+
+                &:hover{
+                    span{
+                        color: $subtext-color;
+                    }
+                }
+            }
+
+            li.has-dropdown {
+              background-color: $dropdown-bg;
+            }
+        }
+
+        .side-nav-support{
+            > div label{
+                svg{
+                    path, rect{
+                        fill: $subtext-color;
+                    }
+                }
+            }
+        }
+
+        .side-support-modal .e-modal .card-grid
+         .card-grid-col .card-grid-item .card-grid-name p{
+            color: $text-color;
+
+        }
+    }
+
+    // Splash
+    .splash-clockin{
+        .splash-clockin-user{
+            background-color: $card-color;
+
+            .profile-item{
+                .thumb{
+                    border-color: $border-color;
+                }
+            }
+
+            .card-timerecorder-current{
+                box-shadow: 0 0 0 1px $border-color;
+
+                .card-timerecorder-expected{
+                    .card-timerecorder-alert{
+                        border-color: $border-color;
+                    }
+                    .card-timerecorder-action{
+                        .card-timerecorder-clock{
+                            .card-timerecorder-button{
+                                span{
+                                    button{
+                                        color: $link-color;
+
+                                        &:hover{
+                                            color: $text-active-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .card-timerecorder-clock{
+                    .card-timerecorder-day{
+                        div{
+                            color: $text-color;
+                        }
+                        p{
+                            color: $subtext-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Dashboard
+    .v2-main{
+
+        .card-applications{
+            > div{
+                a{
+                    background-color: $card-color;
+
+                    &:hover{
+                        span{
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-teamlist{
+            .belt-tabs{
+                background-color: $card-color;
+
+                .belt-tab{
+                    > div{
+                        color: $subtext-color;
+                    }
+
+                    > span{
+                        background-color: $card-color2;
+                        color: $subtext-color;
+                    }
+
+                    &.is-active{
+                        > div{
+                            color: $text-color;
+                        }
+
+                        > span{
+                            background-color: $form-active-color;
+                            color: $text-color;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
+            }
+            .card-teamlist-item{
+                background-color: $card-color;
+
+                > div:last-of-type{
+                    p{
+                        color: $text-color;
+                    }
+                }
+            }
+            .card-teamlist-profile{
+                background-color: $card-color2;
+
+                .thumb{
+                    border-color: $card-color;
+                }
+
+                .card-teamlist-status{
+                    span{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        .card-statistics{
+            > div{
+                border-color: $border-color;
+
+                .dropdown{
+                    .e-input{
+                        input{
+                            background-color: transparent;
+                            box-shadow: none;
+                            &::placeholder{
+                                color: $subtext-color;
+                            }
+                            &:hover{
+                                background-color: none;
+                            }
+                        }
+                    }
+                }
+
+                &:first-of-type{
+                    span{
+                        color: $subtext-color;
+                    }
+                }
+
+                .card-statistics-origin{
+                    > div{
+                        span{
+                            color: $subtext-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-about{
+            background-color: $card-color;
+
+            .belt-tabs{
+                box-shadow: inset 0 -1px 0 0 $border-color;
+
+                .belt-tab{
+                    color: $subtext-color;
+                    &:hover{
+                        background-color: transparent;
+                    }
+
+                    &.is-active{
+                        color: $text-color;
+                    }
+                }
+            }
+
+            .card-about-text{
+                p{
+                    color: $subtext-color;
+                }
+            }
+        }
+
+        .card-welcome-text{
+            p{
+                color: $subtext-color;
+            }
+        }
+
+        .card-announcement-item{
+            .card-announcement-date{
+                background-color: $card-color2;
+                span{
+                    color: $text-color;
+                }
+            }
+            .card-announcement-title{
+                span{
+                    color: $subtext-color;
+
+                    &:first-of-type{
+                        color: $text-color;
+                    }
+                }
+            }
+            &:hover{
+                background-color: $card-color2;
+            }
+        }
+
+    }
+
+    // Attendance
+    .v2-main{
+        .card-list-item{
+            box-shadow: 0 1px 0 0 $border-color;
+
+            > a{
+                > div{
+                    p{
+                        color: $text-color;
+                    }
+                    span{
+                        color: $subtext-color;
+                    }
+                }
+            }
+
+            .e-check{
+                .e-check-input{
+                    label{
+                        border: 2px solid $form-color;
+                    }
+                    input:disabled + label{
+                        box-shadow: inset 0 0 0 2px $card-color;
+                        background-color: $form-disabled-color;
+                        border-color: $form-disabled-color;
+                    }
+                    input:checked + label{
+                        background-color: $form-active-color;
+                        border-color: $form-active-color;
+                    }
+                }
+            }
+
+            &:hover{
+                background-color: $card-color2;
+                box-shadow: inset 0 -1px 0 0 $bg-color2;
+
+                &:before, &:after{
+                    background-color: $bg-color2;
+                }
+
+                .e-check{
+                    .e-check-input{
+                        input:disabled + label{
+                            box-shadow: inset 0 0 0 2px $card-color;
+                            background-color: $form-disabled-color;
+                            border-color: $form-disabled-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-content-climax{
+            border-color: $border-color;
+
+            > div{
+                p{
+                    color: $text-color;
+                }
+                span{
+                    color: $subtext-color;
+                }
+            }
+        }
+
+        .card-content-details{
+            .card-content-text{
+                p{
+                    color: $text-color;
+                }
+            }
+        }
+
+        .card-content-text{
+            p{
+                color: $text-color;
+            }
+        }
+
+        .card-profile-details{
+            .profile-detail-info {
+                .info-item{
+                    span{
+                        color: $subtext-color;
+                    }
+                }
+
+                .profile-details-reportsto{
+                    border-top: 1px solid $border-color;
+
+                    div > p, span{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .side-certify{
+        border-color: $border-color;
+    }
+
+    // Requests
+    .v2-main{
+        .hr-divider{
+            background-color: $border-color;
+        }
+
+        .card-request-details{
+            p{
+                color: $text-color;
+
+                i{
+                    color: $subtext-color;
+                }
+            }
+
+            > span{
+                color: $subtext-color;
+            }
+        }
+
+        .card-content-text{
+            span{
+                color: $subtext-color;
+            }
+        }
+
+        .side-related-status{
+            > div{
+                div{
+                    label{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        .card-leavecredits{
+            box-shadow: inset 0 0 0 1px $border-color;
+
+            > span{
+                color: $text-color;
+            }
+        }
+
+        .modal-changeshift{
+            .v2-main{
+                .v2-content{
+                    background-color: $card-color;
+                }
+            }
+        }
+
+        .side-cards{
+            .menuBar-request-form .side-list{
+                ul{
+                    > li{
+                        &:before{
+                            background-color: $border-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card-shift-request{
+        .card-process-alert{
+            > div{
+                box-shadow: inset 0 0 0 1px $border-color;
+
+                h5{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    .card-batch{
+        background-color: $card-color2;
+    }
+
+    .modal-processmultiple .card-shift-content{
+        background-color: $card-color2;
+    }
+
+    // View Shift
+    .calendar{
+        .calendar-item{
+            border-color: $border-color;
+
+            .calendar-content{
+                span{
+                    color: $text-color;
+                }
+            }
+
+            &.is-rest-day{
+                h4{
+                    color: $form-color;
+                }
+                .calendar-content{
+                    span{
+                        color: $form-color;
+                    }
+                }
+            }
+
+            &:hover{
+                background-color: $card-color2;
+            }
+
+            &.is-active{
+                background-color: $border-color;
+                border-color: $calendar-grid;
+
+                .calendar-day{
+                    h4{
+                        color: $text-color;
+                    }
+                }
+            }
+
+            &.is-today{
+                .calendar-day{
+                    h4{
+                        color: $text-color;
+                        background-color: $calendar-grid-today;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-viewshift{
+
+        > .card{
+            .card-belt{
+                background-color: transparent;
+            }
+        }
+
+        .card-content{
+            .calendar-days{
+                .calendar-item{
+                    &.is-othermonth{
+                        background-color: transparent;
+                    }
+
+                    &.is-active{
+                        background-color: $bg-color2;
+                        border-right: 2px dashed $border-color;
+                        border-bottom: 2px dashed $border-color;
+                    }
+
+                    &.is-today{
+                        .calendar-day{
+                            h4{
+                                color: $text-active-color;
+                            }
+                        }
+                    }
+
+                    @include md{
+                        border-right: 2px dashed $border-color;
+
+                        &:last-of-type{
+                            border-bottom: 2px dashed $border-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .side-batch{
+        > div{
+            background-color: $card-color2;
+        }
+        p{
+            color: $text-color;
+        }
+    }
+
+    .side-holiday{
+        .side-holiday-date{
+            background-color: $card-color2;
+            p{
+                color: $text-color;
+            }
+        }
+    }
+
+    .side-viewshift{
+        .card-side-dtr{
+            > div{
+                span{
+                    color: $text-color;
+                }
+            }
+        }
+        .card-title-widget{
+            > div{
+                > span{
+                    color: $subtext-color;
+                }
+            }
+        }
+    }
+
+    .card-shift-talent{
+        border-bottom: 1px solid $border-color;
+    }
+
+    .viewshift-modal{
+        .e-toggle{
+            box-shadow: 0 0 0 1px $border-color;
+
+           >div{
+               label{
+                   color: $text-color;
+
+                   &:hover{
+                    background-color: $card-color2;
+                   }
+               }
+           }
+        }
+    }
+
+    // Express
+
+    #express-popover{
+
+        > .card{
+            background-color: $express-heading;
+        }
+
+        .e-field{
+            .e-input{
+                input{
+                    background-color: $card-color;
+                }
+            }
+            .e-toggle{
+                box-shadow: none;
+            }
+        }
+        .express-content{
+            background-color: $card-color2;
+
+            p{
+                color: $subtext-color;
+            }
+
+            .express-services-item{
+                border-color: $border-color;
+
+                .express-services-text{
+                    p{
+                        color: $subtext-color;
+
+                        b{
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+
+            .e-field{
+                input, textarea{
+                    background-color: $card-color;
+                    color: $text-color;
+                }
+            }
+
+            &.express-form {
+                .express-form-attachment {
+                    border-bottom: 1px solid $border-color;
+                }
+
+                .e-check{
+                    .e-check-input{
+                        label{
+                            border: 2px solid $border-color;
+                        }
+                        input:disabled + label{
+                            box-shadow: inset 0 0 0 2px $card-color;
+                            background-color: $form-disabled-color;
+                            border-color: $form-disabled-color;
+                        }
+                        input:checked + label{
+                            background-color: $form-active-color;
+                            border-color: $form-active-color;
+                        }
+                    }
+                }
+
+                .express-form-acknowledgement  {
+                    .e-input-label span {
+                        color: $subtext-color;
+                    }
+                }
+            }
+        }
+
+        .express-content-chat{
+            background-color: $card-color2;
+
+            .express-chat-send{
+                background-color: $card-color2;
+
+                &:before{
+                    background-color: $border-color;
+                }
+
+                .e-field{
+                    input{
+                        background-color: $card-color2;
+                        color: $text-color;
+                    }
+                }
+            }
+
+            .express-chat{
+                .chat-item{
+                    .chat-text{
+                        background-color: $card-color;
+                        p{
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cart-popover{
+            .shop-cart{
+                background-color: $card-color2;
+
+                .card-list{
+                    > h5{
+                        color: $text-color;
+                    }
+                    .shop-cart-row{
+                        border-color: $border-color;
+                    }
+                    .shop-cart-item{
+                        .cart-img{
+                            box-shadow: inset 0 0 0 1px $border-color;
+                        }
+
+                        ul{
+                            li{
+                                > span{
+                                    color: $subtext-color;
+                                }
+                            }
+                        }
+                        .cart-actions{
+                            a{
+                                &:hover{
+                                    background-color: $card-color;
+                                    svg{
+                                        path, rect, circle{
+                                            color: $subtext-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .shop-cart-total{
+                background-color: $card-color2;
+                border-color: $border-color;
+
+                div{
+                    p{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    // News Feed
+    .card-grid-item{
+        .card-grid-date{
+            .card-grid-day{
+                background-color: $card-color2;
+            }
+            .card-grid-title{
+                p{
+                    color: $text-color;
+                }
+            }
+        }
+        .card-grid-img{
+            background-color: transparent;
+        }
+        .card-grid-info > div{
+            span{
+                color: $subtext-color;
+            }
+        }
+    }
+    .card-filter-list{
+        .is-active{
+            a{
+                span{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    // Shop Rewards
+    .v2-shop{
+        background-color: $bg-color;
+
+        .v2-shop-list{
+            @include gradient(to bottom, $bg-color2, $bg-color);
+
+            .shop-list{
+                a{
+                    > div{
+                        h5{
+                            color: $text-color;
+                        }
+                        span{
+                            color: $subtext-color;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: $card-color2;
+                    }
+                }
+            }
+        }
+
+        .card-content{
+            &.card-content-alert{
+                .alert{
+                    p{
+                        color: $subtext-color;
+                    }
+                }
+            }
+        }
+
+        .v2-shop-content{
+
+            .shop-grid{
+                .shop-grid-row{
+                    .shop-grid-item{
+                        box-shadow: inset 0 0 0 1px $border-color;
+
+                        h5{
+                            color: $text-color;
+                        }
+
+                        span{
+                            color: $green-light4;
+                        }
+                    }
+                }
+            }
+
+            .form-loop > div{
+                hr{
+                    background-color: $border-color;
+                }
+            }
+        }
+    }
+
+    .modal-product{
+        .e-modal{
+            .modal-product-content{
+                .modal-product-form{
+                    p{
+                        color: $text-color;
+                    }
+
+                    .modal-product-fields{
+                        > div{
+                            border-color: $border-color;
+                        }
+                    }
+                    .modal-product-onbehalf, .modal-product-update{
+                        border-color: $border-color;
+                    }
+                }
+                .modal-product-image{
+                    background-color: $card-color2;
+
+                    .e-image-carousel{
+                        background-color: $border-color;
+                    }
+
+                    .img-zoom-result{
+                        border-color: $form-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .v2-checkout{
+        .card-content{
+            h5, h4{
+                color: $text-color;
+            }
+
+            .checkout-cart-row{
+                border-color: $border-color;
+
+                .checkout-cart-image{
+                    box-shadow: inset 0 0 0 1px $border-color;
+                }
+
+                .checkout-cart-details{
+                    h4{
+                        color: $text-color;
+                    }
+                    p{
+                        color: $subtext-color;
+                    }
+                }
+
+                .checkout-cart-actions{
+                    a{
+                        &:hover{
+                            background-color: $card-color2;
+
+                            svg{
+                                path, rect, circle{
+                                    fill: $subtext-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .shop-summary{
+            > div{
+                .row{
+                    color: $subtext-color;
+                }
+            }
+            .e-radio{
+                .e-radio-input{
+                    input:checked + label{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    // Channels
+    .v2-channels{
+        background-color: $bg-color;
+
+        .v2-channels-sidebar{
+            @include gradient(to bottom, $bg-color2, $bg-color);
+
+            .channels-sidebar-item{
+                h5{
+                    color: $text-color;
+                }
+
+                &:hover{
+                    background-color: $bg-color2;
+                }
+            }
+        }
+
+        .v2-channels-convo{
+            .channel-climax{
+                background-color: $card-color;
+                border-color: $border-color;
+
+                .title-details{
+                    a span{
+                        color: $link-color;
+                    }
+                }
+
+                .contributors-section{
+                    border-top: 1px solid $border-color;
+
+                    >span{
+                        background-color: $card-color2;
+                    }
+
+                    .add-contributors-button{
+                        a{
+                            &:hover{
+                                background-color: $bg-color2;
+
+                                span{
+                                    color: $text-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .v2-channels-content{
+                .chat-text{
+                    background-color: $bg-color2;
+
+                    .chat-details{
+                        background-color: $card-color;
+                    }
+
+                    &.is-private{
+                        box-shadow: inset 0 0 0 1px $border-color;
+                    }
+                }
+                .chat-send{
+                    background-color: $card-color;
+                    border-color: $border-color;
+
+                    .field-input{
+                        input{
+                            background-color: transparent;
+                            color: $text-color;
+                            &:hover, &:focus{
+                                color: $text-color;
+                            }
+                        }
+                    }
+
+                    .chat-send-attach{
+                        &:hover{
+                            background-color: $bg-color2;
+                        }
+                    }
+                }
+                .chat-product{
+                    background-color: $card-color2;
+
+                    .item-details{
+                        h5{
+                            color: $text-color;
+                        }
+                    }
+                }
+                .chat-footer{
+                    .chat-time{
+                        span{
+                            color: $subtext-color;
+                        }
+                    }
+                    
+                    .chat-privacy{
+                        >div{
+                            span{
+                                color: $subtext-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .modal-overlay .modal .card-content .contributor-list .contributor-row{
+        border-bottom: 1px solid $border-color;
+
+        &:last-of-type{
+            border-bottom: none;
+        }
+
+        .contributor-row-assign .e-input.input-affiliate{
+            background-color: $card-color2;
+        }
+    }
+
+    // Talent Directory
+    .profile-item .profile-item-name{
+        h6{
+            color: $text-color;
+
+            span{
+                color: $text-color;
+            }
+        }
+    }
+
+    // Leave Balance
+    .card-leavebalance{
+        &.accordion .item.expand{
+            background-color: $card-color2;
+        }
+        .item{
+            border-bottom: 1px solid $border-color;
+
+            &:last-of-type{
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .leavebalance-list{
+        .leavebalance-list-head, .leavebalance-list-item{
+            box-shadow: 0 1px 0 0 $border-color;
+        }
+
+        .leavebalance-list-item{
+            &:last-of-type{
+                box-shadow: none;
+            }
+
+            &.is-open, &:hover{
+                background-color: $card-color2;
+                box-shadow: inset 0 -1px 0 0 $card-color2;
+
+                &:before, &:after{
+                    background-color: $card-color2;
+                }
+            }
+
+            .leavebalance-list-date {
+                b {
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    // Account Profile
+    .account-profile{
+        .card-profile-details{
+            .card-profile-content{
+                .row{
+                    border-color: $border-color;
+
+                    .field-value{
+                        p{
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #modal-crop{
+        .content-imagecrop{
+            background-color: $card-color2;
+
+            .imageBox{
+                background-color: $card-color;
+                box-shadow: 0 0 0 1px $card-color;
+                border-color: $card-color2;
+            }
+        }
+
+        .card-footer{
+            > div{
+                button{
+                    border-color: $form-active-color;
+
+                    &:hover{
+                        border-color: $form-hover-color;
+                    }
+                }
+            }
+        }
+    }
+
+    // Documents
+    .modal-documents{
+        .card-acknowledgment{
+            .e-check{
+                span{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    //Basic Profile
+    .profile-item{
+        .profile-item-name{
+            h6{
+                color: $text-color;
+            }
+        }
+    }
+
+    .account-profile{
+        .card-profile-header{
+            .profile-details-info .info-item span{
+                color: $subtext-color;
+            }  
+        }
+
+        .card-profile-details{
+            .card-profile-content{
+                p{
+                    color: $text-color;
+                }
+            }
+
+            .contact-info{
+                background-color: $bg-color;
+
+                p{
+                    color: $subtext-color;
+                }
+            }
+        }
+
+        .talent-profile{
+            .card-view{
+                p {
+                    color: $text-color;
+                }
+            }
+
+            .employee-config{
+                .config-list{
+                    li{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Skeleton Loading
+.v2.theme-lightblue{
+    .l-text{
+        span{
+            background-color: $card-color2;
+        }
+    }
+
+    .l-text-h{
+        span{
+            background-color: $card-color2;
+        }
+    }
+
+    .l-card{
+        background-color: $card-color;
+    }
+
+    .l-belt{
+        .l-belt-icon{
+            background-color: $card-color2;
+        }
+        .l-belt-info{
+            box-shadow: inset 0 0 0 2px $card-color2;
+        }
+        .l-belt-left{
+            span{
+                background-color: $card-color2;
+            }
+        }
+        .l-belt-right{
+            .l-belt-action{
+                box-shadow: inset 0 0 0 1px $card-color2;
+
+                .l-icon{
+                    background-color: $card-color2;
+                }
+            }
+        }
+    }
+
+    .l-lists-side{
+        > div{
+            border-bottom: 1px solid $card-color2;
+        }
+        .l-side-sort{
+            .l-side-fields{
+                .l-field{
+                    background-color: $card-color2;
+
+                    .l-icon{
+                        background-color: $card-color;
+                    }
+                }
+            }
+            .l-side-toggle{
+                box-shadow: inset 0 0 0 1px $card-color2;
+                > div{
+                    border-color: $card-color2;
+                }
+            }
+        }
+        .l-side-button{
+            background-color: $card-color2;
+
+            span{
+                background-color: $card-color;
+            }
+        }
+    }
+
+    .l-side-status{
+        .l-status-item{
+            .l-badge{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-page-title{
+        .l-icon{
+            background-color: $card-color;
+        }
+        .l-info{
+            box-shadow: inset 0 0 0 2px $card-color;
+        }
+        .l-title-left{
+            .l-text{
+                span{
+                    background-color: $card-color;
+                }
+            }
+            .l-icon{
+                background-color: $card-color;
+            }
+            .l-info{
+                box-shadow: inset 0 0 0 2px $card-color;
+            }
+        }
+        .l-title-right{
+            .l-belt-pivot{
+                box-shadow: inset 0 0 0 1px $card-color;
+                .l-text{
+                    span{
+                        background-color: $card-color;
+                    }
+                }
+                svg{
+                    path, rect, circle{
+                        fill: $card-color;
+                    }
+                }
+            }
+            .l-action{
+                box-shadow: inset 0 0 0 1px $card-color;
+                svg{
+                    path, rect, circle{
+                        fill: $card-color;
+                    }
+                }
+            }
+            .l-toggle{
+                box-shadow: inset 0 0 0 1px $card-color;
+                > div:first-of-type{
+                    background-color: $card-color;
+
+                    .l-icon{
+                        background-color: $card-color2;
+                    }
+                }
+                .l-icon{
+                    background-color: $card-color;
+                }
+            }
+        }
+    }
+
+    .l-search{
+        background-color: $card-color2;
+
+        .l-icon{
+            background-color: $card-color2;
+        }
+    }
+
+    .l-belt-button{
+        box-shadow: inset 0 0 0 1px $card-color2;
+
+        > div{
+            background-color: $card-color2;
+        }
+
+        span{
+            background-color: $card-color2;
+        }
+    }
+
+    .l-pivot{
+        box-shadow: inset 0 0 0 1px $card-color2;
+    }
+
+    .l-topnav{
+        .l-topnav-left{
+            svg{
+                path, rect, circle{
+                    fill: $card-color2;
+                }
+            }
+        }
+
+        .l-topnav-right{
+            span, div{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-sidenav{
+        span{
+            background-color: $card-color2;
+            &::before{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-home{
+        background-color: $card-color;
+
+        .l-home-page{
+            .l-default-main{
+                background-color: $bg-color2;
+            }
+            .l-home-main{
+                background: $bg-color;
+
+                .l-home-banner{
+                    background: $bg-color2;
+                }
+
+                .l-home-content{
+                    .l-welcome{
+                        .l-welcome-img{
+                            > div{
+                                background-color: $card-color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .l-applications{
+        .l-applications-item{
+            background-color: $card-color;
+
+            > span{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-stats{
+        > div{
+            border-color: $card-color2;
+        }
+    }
+
+    .l-stats-item{
+        .l-stats-text{
+            .l-stats-link{
+                svg{
+                    path{
+                        fill: $card-color2;
+                    }
+                }
+            }
+        }
+        .l-stats-chart{
+            box-shadow: inset 0 0 0 10px $card-color2;
+
+            span{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-quick{
+        .l-quick-title, .l-quick-item{
+            > span{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-side-events{
+        .l-events-item{
+            .l-events-thumbs{
+                > span{
+                    background-color: $card-color2;
+                }
+            }
+        }
+        .l-events-link{
+            svg{
+                path{
+                    fill: $card-color2;
+                }
+            }
+        }
+    }
+
+    .l-splash{
+        background-color: $bg-color;
+
+        .l-splash-time{
+            > div{
+                background-color: $bg-color2;
+
+                span{
+                    background-color: $card-color;
+                }
+            }
+        }
+
+        .l-splash-clock{
+            background-color: $card-color;
+
+            .l-splash-user{
+                .l-splash-img{
+                    background-color: $bg-color;
+                    box-shadow: inset 0 0 0 5px $bg-color2;
+                }
+            }
+
+            .l-splash-action{
+                box-shadow: inset 0 0 0 1px $card-color2;
+
+                .l-splash-buttons{
+                    > span{
+                        box-shadow: inset 0 0 0 1px $card-color2;
+                        span{
+                            background-color: $card-color2;
+                        }
+                    }
+                    > div{
+                        background-color: $card-color2;
+
+                        .l-icon{
+                            background-color: $card-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .l-lists{
+        background-color: $card-color;
+
+        .l-lists-main{
+            background-color: $bg-color;
+
+            > .l-card{
+                .l-belt{
+                    .l-belt-left{
+                        .l-belt-button{
+                            background-color: $card-color2;
+                            .l-icon{
+                                background-color: $card-color;
+                            }
+                            > span{
+                                background-color: $card-color;
+                            }
+                        }
+                    }
+                    .l-belt-right{
+                        .l-belt-action{
+                            box-shadow: inset 0 0 0 1px $card-color2;
+                        }
+                    }
+                }
+            }
+
+            .l-lists-list{
+                .l-lists-item{
+                    border-bottom: 1px solid $card-color2;
+                    .l-lists-check{
+                        > .l-icon{
+                            background-color: $card-color2;
+                        }
+                    }
+                    .l-lists-badge{
+                        .l-icon{
+                            background-color: $card-color2;
+                        }
+                    }
+                    .l-lists-talent{
+                        .l-thumb{
+                            background-color: $card-color2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .l-lists-side{
+            .l-side-button{
+                .l-text{
+                    span{
+                        background-color: $card-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .l-lists-list{
+        .l-lists-item{
+            border-bottom: 1px solid $card-color2;
+            .l-lists-check{
+                > .l-icon{
+                    background-color: $card-color2;
+                }
+            }
+            .l-lists-badge{
+                .l-icon{
+                    background-color: $card-color2;
+                }
+            }
+            .l-lists-talent{
+                .l-thumb{
+                    background-color: $card-color2;
+                }
+            }
+        }
+    }
+
+    .l-viewshift{
+        background-color: $bg-color2;
+    }
+
+    .l-viewshift-calendar{
+        .l-viewshift-dates{
+            .l-viewshift-row{
+                .l-viewshift-col{
+                    border-bottom: 2px dashed $border-color;
+                    border-right: 2px dashed $border-color;
+
+                    > .l-icon{
+                        background-color: $card-color2;
+                    }
+
+                    .l-viewshift-day{
+                        background-color: $card-color2;
+                        .l-icon{
+                            background-color: $card-color;
+                        }
+                        .l-text{
+                            span{
+                                background-color: $card-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .l-timerecorder{
+        background-color: $card-color;
+
+        .l-timerecorder-content{
+            .l-timerecorder-title{
+                .l-title-left{
+                    .l-info{
+                        box-shadow: inset 0 0 0 2px $card-color2;
+                    }
+                    .l-icon{
+                        background-color: $card-color2;
+                    }
+                }
+            }
+            .l-timerecorder-shift{
+                box-shadow: inset 0 0 0 1px $card-color2;
+
+                > .row{
+                    border-color: $card-color2;
+                }
+
+                .l-timerecorder-clockin{
+                    .l-button{
+                        background-color: $card-color2;
+
+                        .l-icon{
+                            background-color: $card-color;
+                        }
+
+                        .l-text{
+                            span{
+                                background-color: $card-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            > div{
+                border-color: $card-color2;
+
+                .l-timerecorder-details{
+                    .l-text{
+                        .l-icon{
+                            background-color: $card-color2;
+                        }
+                    }
+                    .l-text-link{
+                        svg{
+                            path, rect, circle{
+                                fill: $card-color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .l-teamlist-modal{
+        background-color: $card-color;
+        height: 100%;
+
+        .l-teamlist-modal-profile{
+            background-color: $card-color2;
+
+            .l-teamlist-modal-belt{
+                .l-text{
+                    .l-icon, > span{
+                        background-color: $card-color;
+                    }
+                    .l-info{
+                        box-shadow: inset 0 0 0 2px $card-color;
+                    }
+                }
+                .l-icon{
+                    background-color: $card-color;
+                }
+            }
+
+            .l-teamlist-modal-user{
+                .l-thumb{
+                    background-color: $card-color;
+                }
+
+                .l-teamlist-modal-name{
+                    span{
+                        background-color: $card-color;
+                    }
+                }
+            }
+        }
+
+        .l-teamlist-modal-content{
+            .l-teamlist-modal-details{
+                .l-details-item{
+                    .l-icon{
+                        background-color: $card-color2;
+                    }
+                }
+            }
+        }
+    }
+
+    .l-tabs{
+        box-shadow: inset 0 -1px 0 0 $card-color2;
+
+        .l-text{
+            span{
+                background-color: $card-color2;
+            }
+
+            &:after{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-notif{
+        .l-text, .l-text-h{
+            span{
+                background-color: $card-color;
+            }
+        }
+
+        .l-notif-img{
+            background-color: $card-color;
+        }
+    }
+
+    .l-shine{
+        background-image: linear-gradient(90deg, rgba($card-color, 0), rgba($card-color, 0.8), rgba($card-color, 0));
+    }
+
+    .l-listinner{
+        background-color: $bg-color2;
+
+        .l-listinner-main{
+            .l-climax{
+                border-color: $card-color2;
+
+                .l-badge{
+                    background-color: $card-color2;
+                }
+            }
+
+            .l-listinner-details{
+                .l-icon{
+                    background-color: $card-color2;
+                }
+            }
+
+            .l-listinner-side{
+                .l-listinner-list{
+                    .l-text-h{
+                        .l-icon{
+                            background-color: $card-color2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .l-listinner-profile{
+            .l-listinner-employee{
+                background-color: $card-color;
+
+                .l-listinner-user{
+                    background-color: $bg-color;
+
+                    .l-thumb, .l-listinner-name span{
+                        background-color: $card-color;
+                    }
+                }
+
+                .l-listinner-list{
+                    .l-text, .l-text-h{
+                        .l-icon{
+                            background-color: $card-color2;
+                        }
+                    }
+                }
+
+                .l-reportsto{
+                    .l-reportsto-user{
+                        .l-thumb{
+                            background-color: $card-color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .popover{
+        .l-shine{
+            background-image: linear-gradient(90deg, rgba($card-color2, 0), rgba($card-color2, 0.8), rgba($card-color2, 0));
+        }
+    }
+
+    .card-blank, .channels-convo-blank{
+        .icon{
+            svg{
+                rect{
+                    &:nth-of-type(1){
+                        fill: $bg-color2;
+                    }
+
+                    &:nth-of-type(2), &:nth-of-type(6), &:nth-of-type(10){
+                        stroke: $bg-color2;
+                    }
+                }
+            }
+        }
+
+        &.no-document{
+            .icon{
+                svg{
+                    >rect{
+                        &:nth-of-type(6), &:nth-of-type(10){
+                            stroke: initial;
+                        }
+
+                        &:nth-of-type(2), &:nth-of-type(7){
+                            stroke: $card-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .channels-side-blank{
+        .icon{
+            svg{
+                rect{
+                    fill: $bg-color2;
+                }
+            }
+        }
+    }
+
+    .shop-blank{
+        .icon{
+            svg{
+                g{
+                    rect{
+                        &:nth-of-type(1){
+                            fill: $bg-color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Profile 
+    .l-profile-main {
+        .l-profile-banner {
+            background-color: $bg-color2;
+        }        
+    }
+
+    .l-profile {
+        .l-profile-header {
+            .l-thumb{
+                background-color: $card-color2;
+            }
+    
+            .l-profile-name {
+                .l-icon {
+                    background-color: $bg-color2;
+                }
+            }
+        }
+        
+        .l-profile-content {
+            background-color: $card-color;
+        }
+    
+        .l-side-card {
+            background-color: $card-color2;
+        }
+    }
+
+    .l-talent-profile {
+        background-color: $bg-color;
+
+        .l-profile-options {
+            .l-icon {
+                background-color: $card-color2;
+            }
+        }
+    }
+    
+    .l-newsfeed {
+        background-color: $card-color2;
+    }
+
+    .l-grid-col{
+        .l-grid-item{
+            .l-grid-image{
+                background-color: $card-color2;
+            }
+
+            > div:nth-of-type(2) .l-icon{
+                background-color: $card-color2;
+            }
+        }
+    }
+
+    .l-newsfeed-options{
+        .l-icon{
+            background-color: $card-color2;
+        }
+    }
+    
+    .l-belt{
+        .l-info {
+            box-shadow: inset 0 0 0 2px $card-color2;
+        }
+
+        .l-belt-pivot, .l-action{
+            box-shadow: inset 0 0 0 1px $card-color2;
+        }
+
+        .l-action .l-icon{
+            background-color: $card-color2;
+        }
+    }
+
+    // Leave Balance Inner
+    .l-inner-leavebalance  {
+        .l-item-list {
+            .l-item {
+                border-bottom: 1px solid $border-color;
+ 
+                .l-icon {
+                    background-color: $card-color2;
+                }
+            }
+        } 
+     }
+
+    .l-formmodal {
+        .l-text-h{
+            span{
+                background-color: $bg-color2;
+            }
+        }
+
+        .l-field{
+            background-color: $card-color;
+            .l-text{
+                span{
+                    background-color: $card-color2;
+                }
+            }
+
+            .l-icon{
+                background-color: $card-color2;
+            }
+        }
+
+        .l-button {
+            background-color: $bg-color2;
+
+            .l-text{
+                span{
+                    background-color: $card-color;
+                }
+            }
+
+            .l-icon{
+                background-color: $card-color;
+            }
+        }
+    }
+}

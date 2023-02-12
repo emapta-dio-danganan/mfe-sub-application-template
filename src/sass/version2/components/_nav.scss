@@ -1,0 +1,68 @@
+.v2{
+    .side-nav-links{
+        padding-left: 0;
+    
+        li{
+            padding: 0;
+            margin-bottom: 0;
+
+            &:before{
+                display: none;
+            }
+        }
+
+        @include nav-link('home');
+        @include nav-link('attendance');
+        @include nav-link('requests');
+        @include nav-link('viewshift');
+        @include nav-link('newsfeed');
+        @include nav-link('channels');
+        @include nav-link('shoprewards');
+        @include nav-link('talentdirectory');
+        @include nav-link('teamleavebalance');
+        @include nav-link('clientextract');
+        
+        .leave-balance{
+            .side-nav-icon{
+                background: url('/assets/images-v2/icons/gray-light/icon-leavebalance-graylight.svg') center center no-repeat;
+            }
+            &:hover, &.is-active{
+                .side-nav-icon{
+                    background: url('/assets/images-v2/icons/gray-dark/icon-leavebalance-graydark.svg') center center no-repeat;
+                }
+            }
+        }
+        
+        .item-payroll{
+            .side-nav-icon{
+                background: url('/assets/images-v2/icons/gray-light/icon-payrollservice-graylight.svg') center center no-repeat;
+            }
+            &:hover, &.is-active{
+                .side-nav-icon{
+                    background: url('/assets/images-v2/icons/gray-dark/icon-payrollservice-graydark.svg') center center no-repeat;
+                }
+            }
+        }
+        
+        .item-shoprewards{
+            .side-nav-icon{
+                background: url('/assets/images-v2/icons/gray-light/icon-shoprewardsorder-graylight.svg') center center no-repeat;
+            }
+            &:hover, &.is-active{
+                .side-nav-icon{
+                    background: url('/assets/images-v2/icons/gray-dark/icon-shoprewardsorder-graydark.svg') center center no-repeat;
+                }
+            }
+        }
+    }
+
+    .side-support-modal{
+        .side-nav-support{
+            label{
+                svg{
+                    display: initial;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.v2{
+    .chip{
+        background-image: none;
+        background-color: $blue-light;
+        min-height: 36px;
+        height: 36px;
+        margin: 0;
+        padding: 8px 8px 8px 12px;
+        border-radius: $border-radius-sm;
+        display: inline-flex;
+        align-items: center;
+    
+        > span{
+            font-size: $text-sm;
+            color: $gray-dark;
+            padding: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 20px;
+    
+            &.category{
+                font-weight: $font-bold;
+                color: $gray-light4;
+                margin-right: 5px;
+                text-transform: uppercase;
+            }
+        }
+
+        > svg{
+            margin-right: 10px;
+        }
+    
+        .close{
+            background: url('/assets/images-v2/icons/blue/icon-close-sm-blue.svg') no-repeat center;
+            background-color: $white;
+            border-radius: $border-radius-sm;
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+            display: block;
+            border: none;
+    
+            img{
+                display: none;
+            }
+
+            &:hover{
+                background-color: $blue-light2;
+            }
+        }
+    }
+}

@@ -1,0 +1,388 @@
+.calendar-weeks, .calendar-days{
+  display: flex;
+  width: 100%;
+
+  .calendar-item{
+    width: 100%;
+    border-bottom: 1px solid $gray-light;
+    cursor: pointer;
+
+    h3{
+      font-family: $font-body;
+    }
+
+    &:hover{
+      background-color: $gray-lightest;
+
+      .is-event, .is-critical, .has-pending, .has-approved{
+        background-color: $white;
+      }
+    }
+
+    &.is-disabled{
+      cursor: default;
+
+      h3{
+        color: $gray;
+      }
+
+      .calendar-content{
+        div, span{
+          color: $gray;
+        }
+        &.has-approved, &.has-pending, &.is-event, &.is-holiday, &.is-critical{
+          div{
+            color: $gray-darker;
+          }
+          span{
+            color: $gray-dark;
+          }
+        }
+      }
+      &:hover{
+        background-color: transparent;
+        .calendar-content{
+          &.is-event, &.has-pending{
+            background-color: $blue-lightest;
+          }
+
+          &.is-critical{
+            background-color: $red-lightest;
+          }
+
+          &.has-approved{
+            background-color: $green-lightest;
+          }
+        }
+      }
+    }
+  }
+
+  @include md{
+    .calendar-item{
+      width: calc(100% / 7);
+      border-right: 1px solid $gray-light;
+
+      &:nth-of-type(7n){
+        border-right: none;
+      }
+    }
+  }
+}
+
+.calendar-weeks{
+  display: none;
+
+  .calendar-item{
+    padding: 15px;
+    @extend label;
+    margin: 0;
+  }
+
+  @include md{
+    display: block;
+  }
+}
+
+.calendar-days{
+  flex-wrap: wrap;
+
+  .calendar-item{
+    transition: $transition;
+
+    &.is-active{
+      background-color: $secondary;
+      border-color: $secondary;
+      h3, div, span{
+        color: $white;
+      }
+      &.is-restday{
+        h3, .calendar-content div{
+          color: $white;
+        }
+      }
+      .is-critical, .is-event, .has-pending, .has-approved{
+        background-color: $secondary-dark;
+        border-color: $secondary-light;
+      }
+    }
+
+    &.is-othermonth{
+      background-color: $gray-lightest;
+      cursor: default;
+      h3{
+        color: $gray;
+      }
+    }
+
+    &.is-restday{
+      h3{
+        color: $gray;
+      }
+      .calendar-content{
+        > div{
+          color: $gray;
+        }
+      }
+    }
+
+  }
+
+  .calendar-day{
+    width: 100%;
+    display: flex;
+    padding: 15px 15px 5px;
+  }
+
+  .calendar-content{
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition: $transition;
+
+    div{
+      font-size: $text-sm;
+      font-weight: $font-bold;
+    }
+
+    span{
+      font-size: $text-sm;
+      color: $gray-dark;
+      margin-top: 5px;
+      display: block;
+    }
+
+    &.is-event, &.has-pending{
+      background-color: $blue-lightest;
+      padding-left: 10px;
+      border-left: 5px solid $blue;
+    }
+
+    &.is-critical{
+      background-color: $red-lightest;
+      padding-left: 10px;
+      border-left: 5px solid $red;
+    }
+
+    &.has-approved{
+      background-color: $green-lightest;
+      padding-left: 10px;
+      border-left: 5px solid $green;
+    }
+
+    &.is-dtr{
+      display: flex;
+      align-items: flex-start;
+      padding-top: 0;
+
+      > img{
+        margin-right: 10px;
+      }
+      > span{
+        margin-top: 3px;
+      }
+    }
+  }
+
+  @include md{
+    .calendar-item{
+      min-height: 120px;
+    }
+  }
+}
+
+.card-viewemployee {
+  .card-belt {
+    .selected-toggle {
+      background-color: $secondary;
+
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+
+  .calendar-weeks {
+    .calendar-item {
+      text-align: center;
+    }
+  }
+
+  .calendar-days {
+    .calendar-day {
+      padding: 0;
+
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    .calendar-item {
+      &.is-active {
+        border-color: $secondary-light;
+
+        &:hover {
+          background-color: $secondary;
+        }
+
+        .calendar-content {
+          &.dtr-holiday, &.dtr-success, &.dtr-cutoff, &.dtr-warning {
+            background-color: $secondary-dark;
+            border-left: 5px solid $secondary-light;
+          }
+        }
+
+        &.is-today, &.is-rest-day {
+          .calendar-day {
+            h3 {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      &.is-today {
+        .calendar-day {
+          h3 {
+            color: $secondary;
+          }
+        }
+      }
+
+      &.is-rest-day {
+        .calendar-day {
+          h3 {
+            color: $gray;
+          }
+        }
+
+        .calendar-content {
+          color: $gray;
+
+          &.dtr-holiday, &.dtr-cutoff {
+            color: $gray-darker;
+          }
+        }
+      }
+
+      .calendar-content {
+        &.dtr-holiday {
+          background-color: $blue-lightest;
+          border-left: 5px solid $secondary;
+        }
+
+        &.dtr-icons {
+          width: 100%;
+          display: inline-flex;
+          justify-content: flex-end;
+          flex-direction: row-reverse;
+        }
+
+        &.dtr-success {
+          background-color: $green-lightest;
+          border-left: 5px solid $green;
+
+          >div {
+            span {
+              font-weight: 400;
+            }
+          }
+        }
+
+        &.dtr-cutoff {
+          background-color: $gray-lightest;
+          border-left: 5px solid $gray-light;
+        }
+      }
+
+      &.dtr-critical {
+        .calendar-day {
+          background-color: $red;
+
+          h3 {
+            color: $white;
+          }
+        }
+
+        &.is-active {
+          .calendar-day {
+            background-color: $secondary;
+          }
+
+          .calendar-content {
+            background-color: $secondary;
+
+            &.dtr-critical, &.dtr-success, &.dtr-holiday, &.dtr-cutoff, &.dtr-warning {
+              background-color: $secondary-dark;
+              border-left: 5px solid $secondary-light;
+
+              span {
+                color: $white;
+              }
+            }
+          }
+        }
+
+        .calendar-content {
+          background-color: $red;
+          color: $white;
+
+          span {
+            color: $white;
+          }
+
+          &.dtr-success {
+            background-color: $green-lightest;
+            color: $gray-darker;
+
+            span {
+              color: $gray-darker;
+            }
+          }
+
+          &.dtr-holiday {
+            background-color: $blue-lightest;
+            color: $gray-darker;
+          }
+
+          &.dtr-critical {
+            background-color: $red-lightest;
+            border-left: 5px solid $red;
+            color: $gray-darker;
+
+            span {
+              color: $gray-darker;
+            }
+          }
+
+          &.dtr-cutoff {
+            background-color: $gray-lightest;
+            border-left: 5px solid $gray-light;
+            color: $gray-darker;
+          }
+
+          &.dtr-warning {
+            background-color: $yellow-light;
+            color: $gray-darker;
+
+            span {
+              color: $gray-darker;
+            }
+          }
+
+          &.dtr-icons {
+            background-color: transparent;
+
+            img {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      .dtr-warning {
+        background-color: $yellow-light;
+        border-left: 5px solid $yellow;
+      }
+    }
+  }
+}

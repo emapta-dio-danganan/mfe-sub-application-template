@@ -1,0 +1,987 @@
+.input-style {
+  padding: 15px;
+  min-height: 50px;
+  width: 100%;
+  border: 1px solid $gray-light;
+  outline: none;
+  color: $gray-darker;
+  transition: $transition;
+
+  &:hover {
+    border-color: $gray;
+    box-shadow: 0 0 0 3px $gray-lightest;
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 1px $primary;
+
+    ~ label {
+      color: $primary-darker;
+    }
+
+    ~ svg {
+      fill: $primary-darker;
+    }
+  }
+}
+
+.field {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+
+  .text-danger {
+    color: $red;
+  }
+
+  &.field-input {
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    label {
+      position: absolute;
+      top: -7px;
+      left: 15px;
+      background-color: $white;
+      padding: 0 2px;
+      transition: $transition;
+    }
+
+    .input-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      transition: $transition;
+      width: 20px;
+      height: 20px;
+      transition: $transition;
+    }
+
+    .icon-password {
+      background: center center no-repeat;
+      background-image: url("/images/icons/icon-password-graydark.svg");
+    }
+    &:hover .icon-password {
+      background-image: url("/images/icons/icon-password-gray.svg");
+    }
+    input:focus ~ .icon-password {
+      background-image: url("/images/icons/icon-password-tealdark.svg");
+    }
+
+    .icon-idnumber {
+      background: center center no-repeat;
+      background-image: url("/images/icons/icon-profile-graydark.svg");
+    }
+    &:hover .icon-idnumber {
+      background-image: url("/images/icons/icon-profile-gray.svg");
+    }
+    input:focus ~ .icon-idnumber {
+      background-image: url("/images/icons/icon-profile-tealdark.svg");
+    }
+
+    .icon-remove {
+      background: center center no-repeat;
+      background-image: url("/images/icons/icon-delete-graydark.svg");
+    }
+    &:hover .icon-remove {
+      background-image: url("/images/icons/icon-delete-graydark.svg");
+    }
+    input:focus ~ .icon-remove {
+      background-image: url("/images/icons/icon-delete-graydark.svg");
+    }
+
+    .icon-clock {
+      background: center center no-repeat;
+      background-image: url("/images/icons/icon-clock-graydark.svg");
+    }
+    &:hover .icon-clock {
+      background-image: url("/images/icons/icon-clock-gray.svg");
+    }
+    input:focus ~ .icon-clock {
+      background-image: url("/images/icons/icon-clock-tealdark.svg");
+    }
+
+    [class$="container"]{
+      [class$="control"]{
+        border-radius: 0;
+
+        > div{
+          padding: 5px 15px;
+
+          > div{
+            padding: 0;
+            margin: 0;
+
+            input{
+              min-height: 40px;
+              &:focus{
+                box-shadow: none;
+              }
+            }
+          }
+
+          [class$="indicatorContainer"]{
+            margin-left: 12px;
+          }
+        }
+
+        [class$="multiValue"]{
+          margin: 5px 10px 5px 0;
+          background-color: $gray-lightest;
+          border-radius: 0;
+          > div{
+            &:first-of-type{
+              padding: 10px;
+              color: $gray-darker;
+
+              > .select-category{
+                padding: 10px 0;
+                margin-right: 10px;
+              }
+            }
+            &:last-of-type{
+              padding: 5px;
+              border-radius: 0;
+              min-width: 35px;
+              text-align: center;
+              font-weight: 700;
+              justify-content: center;
+              color: $gray-dark;
+
+              svg{
+                height: 18px;
+                width: 18px;
+              }
+
+              &:hover{
+                background-color: $gray-lighter;
+                color: $gray-dark;
+              }
+            }
+          }
+        }
+        [class$="indicatorSeparator"]{
+          display: none;
+        }
+      }
+      [class$="menu"]{
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        border-top: 3px $secondary;
+      }
+    }
+
+    .icon-calendar {
+      background: center center no-repeat;
+      background-image: url("/images/icons/icon-calendar-graydark.svg");
+    }
+    &:hover .icon-calendar {
+      background-image: url("/images/icons/icon-calendar-gray.svg");
+    }
+    input:focus ~ .icon-calendar {
+      background-image: url("/images/icons/icon-calendar-tealdark.svg");
+    }
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .attach-img {
+    box-shadow: inset 0 0 0 1px $primary;
+    padding: 15px 30px;
+    transition: $transition;
+    background: none;
+    height: 50px;
+    margin-bottom: 0;
+
+    &:hover {
+      box-shadow: inset 0 0 0 5px $primary;
+      color: $primary-darker;
+      background-color: $primary;
+    }
+  }
+
+  .attach-chip {
+    margin-top: 15px;
+
+    .chip {
+      margin: 0;
+    }
+  }
+
+  &.field-chips {
+    .chip {
+      height: 35px;
+      background: $gray-lightest;
+      padding: 5px 35px 5px 0;
+      margin: 5px 5px 0 0;
+
+      span {
+        padding: 0 10px;
+      }
+
+      .chip-close {
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+
+  &.field-value {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.is-invalid {
+    input,
+    .select__control,
+    textarea {
+      border-color: $red;
+    }
+    label {
+      color: $red;
+    }
+    .select .select__control {
+      border: 1px solid $red !important;
+    }
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  @extend .input-style;
+
+  &:disabled {
+    background-color: $gray-lightest;
+    border-color: $gray-lighter;
+    color: $gray-dark;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.is-disabled {
+  .select__control {
+    border-color: $gray-lighter;
+    background-color: $gray-lightest;
+  }
+}
+
+input[type="submit"] {
+  @extend .button;
+}
+
+.input-check {
+  position: relative;
+  height: 20px;
+
+  > label {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    box-shadow: inset 0 0 0 2px $gray;
+    transition: $transition;
+    background: url("/images/icons/icon-check-white.svg") center center no-repeat transparent;
+    background-size: 0;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    height: 20px;
+    width: 20px;
+    display: none;
+
+    &:hover + label {
+      box-shadow: inset 0 0 0 2px $secondary;
+    }
+
+    &:checked + label {
+      box-shadow: inset 0 0 0 4px $secondary;
+      background-size: 16px;
+      background-color: $secondary;
+    }
+
+    &:disabled + label {
+      box-shadow: inset 0 0 0 2px $gray-lighter, inset 0 0 0 4px $white;
+      background: none;
+      background-color: $gray-lighter;
+      cursor: default;
+
+      &:hover {
+        box-shadow: inset 0 0 0 2px $gray-lighter, inset 0 0 0 4px $white;
+      }
+    }
+  }
+}
+
+select {
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  @extend .input-style;
+  height: 120px;
+  display: block;
+  resize: none;
+
+  &:disabled {
+    background-color: $gray-lightest;
+    border-color: $gray-lighter;
+    color: $gray-dark;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.select {
+  cursor: pointer;
+
+  &:focus {
+    ~ label {
+      color: $primary-darker;
+    }
+  }
+
+  .select__control {
+    @extend .input-style;
+    border-radius: 0;
+
+    &.select__control--is-focused {
+      border-color: $primary;
+      box-shadow: 0 0 0 1px $primary;
+    }
+
+    &.select__control--menu-is-open {
+      .select__dropdown-indicator {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      .select__dropdown-indicator {
+        background: url("/images/icons/icon-arrowdown-gray.svg") center center no-repeat;
+      }
+    }
+  }
+  .select__value-container {
+    padding: 0 15px;
+    max-height: 50px;
+
+    > div {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .select__menu {
+    border-top: 1px solid $primary;
+    box-shadow: $shadow-popover;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+
+    > div {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  input {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  .select__indicator-separator {
+    display: none;
+  }
+
+  .select__dropdown-indicator {
+    height: 20px;
+    width: 20px;
+    background: url("/images/icons/icon-arrowdown-graydark.svg") center center no-repeat;
+    margin-right: 10px;
+    transition: $transition;
+
+    svg {
+      display: none;
+    }
+  }
+
+  .select__control {
+    padding: 0;
+  }
+
+  .select__option {
+    padding: 15px;
+    color: $gray-dark;
+    transition: $transition;
+    cursor: pointer;
+
+    &.select__option--is-selected,
+    &.select__option--is-focused {
+      background-color: $gray-lightest;
+      color: $gray-darker;
+
+      &:hover {
+        background-color: $gray-lightest;
+        color: $gray-darker;
+      }
+    }
+
+    &:hover {
+      background-color: $gray-lightest;
+      color: $gray-darker;
+    }
+  }
+}
+
+// Timepicker
+.MuiDialog-root {
+  .MuiBackdrop-root {
+    background-color: transparentize($gray-darkest, 0.1);
+  }
+
+  .MuiPaper-root {
+    border-radius: 0;
+    box-shadow: $shadow-modal;
+  }
+
+  .MuiToolbar-root {
+    background-color: $secondary-darker;
+
+    button {
+      &:hover {
+        background-color: transparentize($secondary-darkest, 0.5);
+      }
+    }
+  }
+
+  .MuiPickersClock-clock {
+    background-color: $gray-lightest;
+  }
+
+  .MuiPickersClockPointer-pointer {
+    background-color: $secondary-dark;
+  }
+
+  .MuiPickersClockPointer-thumb {
+    border-color: $secondary-darker;
+    background-color: transparent;
+  }
+
+  .MuiDialogActions-root {
+    display: flex;
+
+    button {
+      flex: 1;
+      border-radius: 0;
+      font-weight: $font-bold;
+      text-transform: none;
+      height: 50px;
+      padding: 10px 30px;
+
+      &:nth-of-type(1) {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px $primary-dark;
+        color: $primary-dark;
+
+        &:hover {
+          box-shadow: inset 0 0 0 5px $primary-light;
+          background-color: $primary-light;
+          color: $primary-darker;
+        }
+      }
+
+      &:nth-of-type(2) {
+        background-color: $primary;
+        color: $primary-darker;
+
+        &:hover {
+          background-color: $primary-light;
+          color: $primary-darker;
+        }
+      }
+    }
+  }
+}
+
+.MuiTextField-root {
+  width: 100%;
+  height: 50px;
+
+  .MuiInputBase-root {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  input {
+    height: 50px;
+    box-sizing: border-box;
+  }
+}
+
+.MuiPopover-root {
+  .MuiPopover-paper {
+    box-shadow: $shadow-popover;
+  }
+  .MuiPaper-root {
+    border-radius: 0;
+    // max-width: 350px;
+
+    .rdrCalendarWrapper {
+      display: flex;
+      font-size: $text-sm;
+      box-shadow: $shadow-popover;
+
+      .rdrMonthAndYearWrapper {
+        background-color: $secondary-darker;
+        padding: 0;
+        height: 70px;
+      }
+
+      .rdrMonthAndYearPickers {
+        select {
+          color: $white;
+          font-size: $text-base;
+          height: 50px;
+          border-radius: 0;
+          background: url("/images/icons/icon-arrowdown-white.svg") 95% center no-repeat;
+          transition: $transition;
+
+          &:hover {
+            background-color: transparentize($secondary-darkest, 0.5);
+          }
+
+          option {
+            padding: 10px;
+            background-color: $white;
+            color: $gray-darker;
+          }
+        }
+      }
+
+      .rdrNextPrevButton {
+        background-color: transparent;
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 0;
+        transition: $transition;
+
+        &:hover {
+          background-color: transparentize($secondary-darkest, 0.5);
+        }
+
+        i {
+          height: 20px;
+          width: 20px;
+          border: 0;
+          margin: 0;
+          transition: $transition;
+        }
+
+        &.rdrPprevButton {
+          i {
+            background: url("/images/icons/icon-arrowleft-white.svg") center center no-repeat;
+          }
+
+          &:hover {
+            i {
+              transform: translateX(-5px);
+            }
+          }
+        }
+
+        &.rdrNextButton {
+          i {
+            background: url("/images/icons/icon-arrowright-white.svg") center center no-repeat;
+          }
+
+          &:hover {
+            i {
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+
+      .rdrMonths {
+        .rdrMonth {
+          padding: 0;
+          width: 100%;
+          box-shadow: 1px 0 0 0 $gray-light;
+          &:last-of-type {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .rdrMonthName {
+        font-family: $font-heading;
+        font-size: 1.25rem;
+        color: $gray-darker;
+        padding: 20px 10px 10px;
+      }
+
+      .rdrWeekDay {
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        color: $gray;
+      }
+
+      .rdrDay {
+        &.rdrDayDisabled {
+          background-color: $gray-lightest !important;
+        }
+        &.rdrDayToday {
+          .rdrDayNumber {
+            span {
+              color: $gray-darker;
+            }
+          }
+        }
+      }
+
+      .rdrDays {
+        button {
+          height: 50px;
+
+          &.rdrDayStartOfWeek {
+            .rdrDayInPreview {
+              margin-left: 0;
+            }
+          }
+
+          &.rdrDayEndOfWeek {
+            .rdrDayInPreview {
+              width: 45px;
+            }
+          }
+
+          .rdrInRange,
+          .rdrStartEdge.rdrEndEdge,
+          .rdrStartEdge,
+          .rdrEndEdge {
+            ~ .rdrDayNumber {
+              span {
+                color: $white;
+              }
+            }
+          }
+
+          > span {
+            height: 40px;
+            width: 40px;
+            top: 5px;
+            left: 5px;
+            border-radius: 50%;
+            transition: $transition;
+
+            &.rdrDayInPreview {
+              box-shadow: none;
+              border-color: $secondary-lighter;
+              background-color: $secondary-lightest;
+              border-radius: 0;
+              z-index: 0;
+              margin: 0 -5px;
+              width: 50px;
+            }
+
+            &.rdrDayNumber {
+              z-index: 1;
+            }
+          }
+
+          .rdrSelected {
+            background-color: $secondary-darker;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            left: 5px;
+            top: 5px;
+
+            ~ .rdrDayNumber {
+              span {
+                color: $white;
+              }
+            }
+          }
+
+          &.rdrDayHovered {
+            border: 0;
+            box-shadow: none;
+            outline: 0;
+          }
+
+          .rdrDayStartPreview,
+          .rdrDayEndPreview {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            left: 5px;
+            top: 5px;
+            border: 0;
+            background-color: transparent;
+            box-shadow: inset 0 0 0 3px $secondary;
+          }
+
+          .rdrDayNumber {
+            span {
+              color: $gray-darker;
+            }
+            &:after {
+              display: none;
+            }
+          }
+
+          &.rdrDayToday {
+            .rdrDayNumber {
+              width: 40px;
+              height: 40px;
+              background-color: $secondary-lighter;
+              top: 5px;
+              left: 5px;
+              border-radius: 50%;
+              position: absolute;
+              z-index: 0;
+
+              span {
+                position: relative;
+                z-index: 1;
+                &:after {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          &[tabIndex="-1"] {
+            .rdrDayNumber {
+              span {
+                color: $gray-light;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.input-attach {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+  + label {
+    text-transform: none;
+  }
+}
+
+.input-numberhours {
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    max-width: 80px;
+  }
+
+  span {
+    margin: 0 5px;
+  }
+}
+
+.form-list {
+  > div {
+    padding: 15px;
+    border-bottom: 1px solid $gray-light;
+  }
+  .title {
+    padding-top: 5px;
+    h5 {
+      font-family: $font-body;
+      margin-bottom: 5px;
+    }
+    span {
+      font-size: $text-sm;
+      color: $gray-dark;
+    }
+  }
+  .field {
+    textarea {
+      height: 100px;
+    }
+  }
+}
+
+.form-list-request {
+  display: flex;
+
+  > a {
+    flex: none;
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+  }
+
+  > div {
+    width: 100%;
+  }
+}
+
+.form-list-content {
+  h5 {
+    font-family: $font-body;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-size: $text-sm;
+    color: $gray-dark;
+  }
+
+  .content-reason {
+    margin: 10px 0;
+
+    p {
+      font-size: $text-sm;
+    }
+  }
+}
+
+.is-invalid {
+  input,
+  .select__control,
+  textarea {
+    border-color: $red;
+  }
+  label {
+    color: $red;
+  }
+  .select .select__control {
+    border: 1px solid $red !important;
+  }
+  .multiSelect {
+    border: 1px solid $red !important;
+  }
+  [class$="-control"]{
+    border-color: $red;
+  }
+}
+
+// Multiple Datepicker
+#leaveDateRangeInput {
+  .MuiPopover-paper {
+    width: 700px;
+    max-width: 700px;
+  }
+}
+
+.input-select {
+  @extend .input-style;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .is-invalid & {
+    border: 1px solid $red;
+  }
+}
+
+.input-select-search {
+  padding: 15px;
+  border-bottom: 1px solid $gray-light;
+
+  .MuiFormControl-root {
+    margin: 0;
+  }
+
+  .MuiInputBase-root {
+    .MuiInputBase-input {
+      border: 0;
+    }
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px solid $gray-light;
+      border-radius: 0;
+    }
+    &:hover {
+      .MuiOutlinedInput-notchedOutline {
+        border: 1px solid $gray;
+        border-radius: 0;
+      }
+    }
+    &.Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border: 1px solid $primary;
+      }
+    }
+  }
+}
+
+.input-select-options {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.form-row{
+  > div{
+    margin-bottom: 30px;
+  }
+
+  .row{
+    > div{
+      margin-bottom: 30px;
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+
+      h5{
+        margin-bottom: -15px;
+      }
+    }
+
+    @include md{
+      > div{
+        margin-bottom: 0;
+
+        h5{
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.check-email{
+  margin-top: 15px;
+}

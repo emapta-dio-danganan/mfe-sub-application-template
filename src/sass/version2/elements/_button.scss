@@ -1,0 +1,230 @@
+.v2{
+
+  .button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    background-color: $green;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border: 0;
+    padding: 15px 30px;
+    min-height: 50px;
+    cursor: pointer;
+    transition: $transition;
+    border-radius: $border-radius-md;
+    text-transform: none;
+  
+    > span{
+      color: $white;
+      transition: $transition;
+    }
+  
+    svg{
+      transition: $transition;
+      margin-right: 10px;
+
+      path{
+        fill: $white;
+      }
+    }
+  
+    &.outline{
+      background-color: transparent;
+      color: $green-dark;
+      box-shadow: inset 0 0 0 1px $green;
+  
+      svg{
+        margin-right: 10px;
+        
+        path, rect, circle{
+          transition: $transition;
+          fill: $green;
+        }
+      }
+
+      span{
+        color: $green-dark;
+      }
+
+      &:hover{
+        color: $white;
+        background-color: $green-dark;
+  
+        svg{
+          path, rect, circle{
+            fill: $white;
+          }
+        }
+
+        span{
+          color: $white;
+        }
+      }
+
+      &.outline-add{
+        padding: 15px 20px 15px 50px;
+        box-shadow: inset 0 0 0 1px $green;
+        border-radius: $border-radius-md;
+        background: url('/assets/images-v2/icons/green/icon-add-green.svg') no-repeat 20px center transparent;
+        transition: $transition;
+
+        span{
+            color: $green-dark;
+            transition: $transition;
+        }
+
+        &:hover{
+            box-shadow: inset 0 0 0 1px $green-dark;
+            background: url('/assets/images-v2/icons/white/icon-add-white.svg') no-repeat 20px center $green-dark;
+            span{
+                color: $white;
+            }
+        }
+
+      }
+    } 
+
+    &.outline-disabled{
+      background: transparent;
+      border: 1px solid $gray-light2;
+      cursor: default;
+
+      span {
+        color: $gray-light2;
+      }
+
+      &:hover{
+        background: transparent;
+        box-shadow: none;
+
+        span {
+          color: $gray-light3;
+        }
+      }
+  
+      &:focus, &:active{
+        transform: scale(1);
+      }
+    }
+  
+    &:hover{
+      background-color: $green-dark;
+      color: $green-dark;
+      box-shadow: inset 0 0 0 5px $green-dark;
+  
+      > span{
+        color: $white;
+      }
+    }
+  
+    &:active{
+      transform: scale(0.95);
+    }
+  
+    &:focus{
+      outline: none;
+    }
+  
+    &.disabled, &:disabled{
+      background-color: $gray-light1;
+      color: $gray-light4;
+      box-shadow: none;
+      cursor: default;
+      
+      &:hover{
+        background-color: $gray-light1;
+        color: $gray-light4;
+      }
+  
+      &:focus, &:active{
+        transform: scale(1);
+      }
+    }
+  
+    &.button-sm{
+      padding: 10px 20px;
+      min-height: 40px;
+    }
+
+    &.button-clockin{
+      background-color: $green;
+      display: flex;
+
+      .icon{
+        height: 20px;
+        width: 20px;
+        margin: 0 10px 0 0;
+        background: url('/assets/images-v2/icons/white/icon-clockin-white.svg')
+      }
+
+      &:hover{
+        background-color: $green-dark;
+        box-shadow: inset 0 0 0 5px $green-dark;
+      }
+    }
+
+    &.button-clockout{
+      background-color: $red;
+      display: flex;
+
+      .icon{
+        height: 20px;
+        width: 20px;
+        margin: 0 10px 0 0;
+        background: url('/assets/images-v2/icons/white/icon-clockout-white.svg')
+      }
+
+      &:hover{
+        background-color: $red-dark;
+        box-shadow: inset 0 0 0 5px $red-dark;
+      }
+    }
+
+    &.button-shiftended{
+      background-color: $gray-light1;
+      display: flex;
+
+      span{
+        color: $gray-dark;
+      }
+
+      .icon{
+        height: 20px;
+        width: 20px;
+        margin: 0 10px 0 0;
+        background: url('/assets/images-v2/icons/gray-light/icon-shiftended-graylight.svg')
+      }
+
+      &:hover{
+        background-color: $gray-light2;
+        box-shadow: inset 0 0 0 5px $gray-light2;
+
+        span{
+          color: $gray;
+        }
+      }
+    }
+  }
+  
+  .text-link{
+      display: inline-flex;
+      align-items: center;
+  
+      svg{
+          margin-left: 5px;
+          transition: $transition;
+
+          path, rect{
+            fill: $green;
+          }
+      }
+  
+      &:hover{
+          svg{
+              transform: translateX(3px);
+          }
+      }
+  }
+}
