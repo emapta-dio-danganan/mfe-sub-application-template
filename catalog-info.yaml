@@ -5,6 +5,10 @@ metadata:
   annotations:
     github.com/project-slug: emapta-dio-danganan/mfe-sub-application-template
   description: Scaffolding for Microfrontend subapplication
+  tags:
+    - reactjs
+    - nodejs
+    - Scaffolding
 spec:
   type: service
   lifecycle: experimental
