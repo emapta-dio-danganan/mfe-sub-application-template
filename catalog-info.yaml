@@ -1,15 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: mfe-sub-application-template
-  annotations:
-    github.com/project-slug: emapta-dio-danganan/mfe-sub-application-template
-  description: Scaffolding for Microfrontend subapplication
-  tags:
-    - reactjs
-    - nodejs
-    - Scaffolding
+  name: mfe-subapplication-template
+  title: MFE Template ReactJS
+  description: MFE Template ReactJS
 spec:
   type: service
-  lifecycle: experimental
   owner: guests
+  lifecycle: experimental
